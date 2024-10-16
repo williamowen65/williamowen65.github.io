@@ -1,4 +1,4 @@
-import { createButton } from './Button';
+import { createButton } from '../../components/buttons/button/Button';
 import './header.css';
 
 export const createHeader = ({ user, onLogout, onLogin, onCreateAccount }) => {
