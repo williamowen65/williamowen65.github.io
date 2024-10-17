@@ -36,7 +36,11 @@ jobs:
           git rm -rf .
 
           # Copy necessary components from main
-          git checkout main -- stories
+          git checkout main -- stories .gitignore
+
+             # Remove unwanted files
+          find . -name "*.stories.js" -type f -delete
+          find . -name "*.mdx" -type f -delete
 
           # Stage and commit the changes
           git add .
