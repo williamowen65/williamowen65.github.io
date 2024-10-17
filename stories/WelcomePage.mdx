@@ -15,6 +15,8 @@ import Accessibility from "./assets/accessibility.png";
 import Theming from "./assets/theming.png";
 import AddonLibrary from "./assets/addon-library.png";
 
+export const placeholder = (x = 600, y = 400) => `https://placehold.co/${x}x${y}`;
+
 export const RightArrow = () => <svg 
     viewBox="0 0 14 14" 
     width="8px" 
@@ -31,22 +33,28 @@ export const RightArrow = () => <svg
   <path d="m11.1 7.35-5.5 5.5a.5.5 0 0 1-.7-.7L10.04 7 4.9 1.85a.5.5 0 1 1 .7-.7l5.5 5.5c.2.2.2.5 0 .7Z" />
 </svg>
 
-<Meta title="Configure your project/test" />
+<Meta title="Welcome" />
 
 <div className="sb-container">
   <div className='sb-section-title'>
-    # Configure your project
+    # This is My Space!
 
-    Because Storybook works separately from your app, you'll need to configure it for your specific stack and setup. Below, explore guides for configuring Storybook with popular frameworks and tools. If you get stuck, learn how you can ask for help from our community.
+    Obviously not thee MySpace, which I was much a fan of. I wish I had known html/css/javascript back then.  
+    This, however, is even better.
+
+    My name is William and I just love creating UI/UX. I want to explore ideas I've had and build up project 'pieces'. There are a few things on my mind to create: A unique carosel, A dial which can be used to rate items, Layouts for forum cards, miscellanous things. 
+    
+    Storybook is completely new to me. I've heard great things though. It seems like a place where I can organize my code ideas. We'll see how that goes, and I invite you to poke around.
+
   </div>
   <div className="sb-section">
     <div className="sb-section-item">
       <img
-        src={Styling}
+        src={placeholder(600, 300)}
         alt="A wall of logos representing different styling technologies"
       />
-      <h4 className="sb-section-item-heading">Add styling and CSS</h4>
-      <p className="sb-section-item-paragraph">Like with web applications, there are many ways to include CSS within Storybook. Learn more about setting up styling within Storybook.</p>
+      <h4 className="sb-section-item-heading">Wondering if I am available for work?</h4>
+      <p className="sb-section-item-paragraph">Chances are that I am looking for work so please reach out.</p>
       <a
         href="https://storybook.js.org/docs/configure/styling-and-css/?renderer=html"
         target="_blank"
@@ -54,94 +62,88 @@ export const RightArrow = () => <svg
     </div>
     <div className="sb-section-item">
       <img
-        src={Context}
-        alt="An abstraction representing the composition of data for a component"
+        src={placeholder(600, 300)}
+        alt="Lorem"
       />
-      <h4 className="sb-section-item-heading">Provide context and mocking</h4>
-      <p className="sb-section-item-paragraph">Often when a story doesn't render, it's because your component is expecting a specific environment or context (like a theme provider) to be available.</p>
-      <a
-        href="https://storybook.js.org/docs/writing-stories/decorators/?renderer=html#context-for-mocking"
-        target="_blank"
-      >Learn more<RightArrow /></a>
+         <h4 className="sb-section-item-heading">Lorem</h4>
+        <p className="sb-section-item-paragraph">lorem</p>
+        <a
+          href="https://example.com"
+          target="_blank"
+        >Learn more<RightArrow /></a>
     </div>
     <div className="sb-section-item">
-      <img src={Assets} alt="A representation of typography and image assets" />
+      <img  src={placeholder(600, 300)} alt="lorem" />
       <div>
-        <h4 className="sb-section-item-heading">Load assets and resources</h4>
-        <p className="sb-section-item-paragraph">To link static files (like fonts) to your projects and stories, use the
-        `staticDirs` configuration option to specify folders to load when
-        starting Storybook.</p>
+        <h4 className="sb-section-item-heading">Lorem</h4>
+        <p className="sb-section-item-paragraph">lorem</p>
         <a
-          href="https://storybook.js.org/docs/configure/images-and-assets/?renderer=html"
+          href="https://example.com"
           target="_blank"
         >Learn more<RightArrow /></a>
       </div>
     </div>
+ 
   </div>
 </div>
 <div className="sb-container">
   <div className='sb-section-title'>
-    # Do more with Storybook
+    # Lorem
 
-    Now that you know the basics, let's explore other parts of Storybook that will improve your experience. This list is just to get you started. You can customise Storybook in many ways to fit your needs.
+    lorem
   </div>
 
   <div className="sb-section">
     <div className="sb-features-grid">
       <div className="sb-grid-item">
-        <img src={Docs} alt="A screenshot showing the autodocs tag being set, pointing a docs page being generated" />
-        <h4 className="sb-section-item-heading">Autodocs</h4>
-        <p className="sb-section-item-paragraph">Auto-generate living,
-          interactive reference documentation from your components and stories.</p>
+        <img src={placeholder()} alt="lorem" />
+        <h4 className="sb-section-item-heading">Lorem</h4>
+        <p className="sb-section-item-paragraph">Lorem</p>
         <a
-          href="https://storybook.js.org/docs/writing-docs/autodocs/?renderer=html"
+          href="https://example.com"
           target="_blank"
         >Learn more<RightArrow /></a>
       </div>
       <div className="sb-grid-item">
-        <img src={Share} alt="A browser window showing a Storybook being published to a chromatic.com URL" />
-        <h4 className="sb-section-item-heading">Publish to Chromatic</h4>
+        <img src={placeholder()} alt="lorem" />
+        <h4 className="sb-section-item-heading">Lorem</h4>
         <p className="sb-section-item-paragraph">Publish your Storybook to review and collaborate with your entire team.</p>
         <a
-          href="https://storybook.js.org/docs/sharing/publish-storybook/?renderer=html#publish-storybook-with-chromatic"
+          href="https://example.com"
           target="_blank"
         >Learn more<RightArrow /></a>
       </div>
       <div className="sb-grid-item">
-        <img src={FigmaPlugin} alt="Windows showing the Storybook plugin in Figma" />
-        <h4 className="sb-section-item-heading">Figma Plugin</h4>
-        <p className="sb-section-item-paragraph">Embed your stories into Figma to cross-reference the design and live
-          implementation in one place.</p>
+        <img src={placeholder()} alt="lorem" />
+        <h4 className="sb-section-item-heading">Lorem</h4>
+        <p className="sb-section-item-paragraph">Lorem</p>
         <a
-          href="https://storybook.js.org/docs/sharing/design-integrations/?renderer=html#embed-storybook-in-figma-with-the-plugin"
+          href="https://example.com"
           target="_blank"
         >Learn more<RightArrow /></a>
       </div>
-      <div className="sb-grid-item">
-        <img src={Testing} alt="Screenshot of tests passing and failing" />
-        <h4 className="sb-section-item-heading">Testing</h4>
-        <p className="sb-section-item-paragraph">Use stories to test a component in all its variations, no matter how
-          complex.</p>
+     <div className="sb-grid-item">
+        <img src={placeholder()} alt="lorem" />
+        <h4 className="sb-section-item-heading">Lorem</h4>
+        <p className="sb-section-item-paragraph">Lorem</p>
         <a
-          href="https://storybook.js.org/docs/writing-tests/?renderer=html"
+          href="https://example.com"
           target="_blank"
         >Learn more<RightArrow /></a>
-      </div>
-      <div className="sb-grid-item">
-        <img src={Accessibility} alt="Screenshot of accessibility tests passing and failing" />
-        <h4 className="sb-section-item-heading">Accessibility</h4>
-        <p className="sb-section-item-paragraph">Automatically test your components for a11y issues as you develop.</p>
+      </div><div className="sb-grid-item">
+        <img src={placeholder()} alt="lorem" />
+        <h4 className="sb-section-item-heading">Lorem</h4>
+        <p className="sb-section-item-paragraph">Lorem</p>
         <a
-          href="https://storybook.js.org/docs/writing-tests/accessibility-testing/?renderer=html"
+          href="https://example.com"
           target="_blank"
         >Learn more<RightArrow /></a>
-      </div>
-      <div className="sb-grid-item">
-        <img src={Theming} alt="Screenshot of Storybook in light and dark mode" />
-        <h4 className="sb-section-item-heading">Theming</h4>
-        <p className="sb-section-item-paragraph">Theme Storybook's UI to personalize it to your project.</p>
+      </div><div className="sb-grid-item">
+        <img src={placeholder()} alt="lorem" />
+        <h4 className="sb-section-item-heading">Lorem</h4>
+        <p className="sb-section-item-paragraph">Lorem</p>
         <a
-          href="https://storybook.js.org/docs/configure/theming/?renderer=html"
+          href="https://example.com"
           target="_blank"
         >Learn more<RightArrow /></a>
       </div>
@@ -158,7 +160,7 @@ export const RightArrow = () => <svg
       >Discover all addons<RightArrow /></a>
   </div>
   <div className='sb-addon-img'>
-    <img src={AddonLibrary} alt="Integrate your tools with Storybook to connect workflows." />
+    <img src={placeholder()} alt="Integrate your tools with Storybook to connect workflows." />
   </div>
 </div>
 
