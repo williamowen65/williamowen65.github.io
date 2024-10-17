@@ -2,7 +2,7 @@
 const config = {
   stories: [
     "../stories/WelcomePage.mdx",
-    "../stories/Configure.mdx",
+    "../stories/StartHere.mdx",
     "../stories/**/*.mdx",
     "../stories/**/*.stories.@(js|jsx|mjs|ts|tsx|mdx)",
     "../stories/**/**/*.stories.@(js|jsx|mjs|ts|tsx|mdx)",
