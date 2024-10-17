@@ -36,7 +36,7 @@ jobs:
           git rm -rf .
 
           # Copy necessary components from main
-          git checkout main -- src/components
+          git checkout main -- stories
 
           # Stage and commit the changes
           git add .
