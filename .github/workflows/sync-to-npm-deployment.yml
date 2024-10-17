@@ -1,0 +1,46 @@
+name: Sync to npm-deployment
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  sync-npm-branch:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the repository
+      - name: Checkout main branch
+        uses: actions/checkout@v3
+        with:
+          ref: main
+
+      # Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      # Clean npm-deployment branch
+      - name: Sync npm-deployment branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Create or switch to npm-deployment branch
+          git checkout npm-deployment || git checkout -b npm-deployment
+
+          # Remove all files (clean the branch)
+          git rm -rf .
+
+          # Copy necessary components from main
+          git checkout main -- src/components
+
+          # Stage and commit the changes
+          git add .
+          git commit -m "Sync components from main to npm-deployment"
+
+          # Push to npm-deployment branch
+          git push origin npm-deployment --force
