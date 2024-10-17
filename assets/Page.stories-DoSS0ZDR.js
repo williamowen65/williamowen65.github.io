@@ -1,4 +1,4 @@
-import{w as y,e as s,u as b}from"./index-DcZGqPg1.js";import{c as f}from"./Header-YuXe8ZSA.js";import"./Button-BE-QExqF.js";const B=()=>{const o=document.createElement("article");let e=null,t=null;const n=()=>{const i=document.getElementsByTagName("article")[0];i.replaceChild(c(),i.firstChild)},h=()=>{e={name:"Jane Doe"},n()},v=()=>{e=null,n()},w=()=>{e={name:"Jane Doe"},n()},c=()=>f({onLogin:h,onLogout:v,onCreateAccount:w,user:e});return t=c(),o.appendChild(t),o.insertAdjacentHTML("beforeend",`
+import{w as y,e as s,u as b}from"./index-DcZGqPg1.js";import{c as f}from"./Header-BCyBg-B3.js";import"./Button-BE-QExqF.js";const B=()=>{const o=document.createElement("article");let e=null,t=null;const n=()=>{const i=document.getElementsByTagName("article")[0];i.replaceChild(c(),i.firstChild)},h=()=>{e={name:"Jane Doe"},n()},v=()=>{e=null,n()},w=()=>{e={name:"Jane Doe"},n()},c=()=>f({onLogin:h,onLogout:v,onCreateAccount:w,user:e});return t=c(),o.appendChild(t),o.insertAdjacentHTML("beforeend",`
   <section class="storybook-page">
     <h2>Pages in Storybook</h2>
     <p>
@@ -51,7 +51,7 @@ import{w as y,e as s,u as b}from"./index-DcZGqPg1.js";import{c as f}from"./Heade
       Viewports addon in the toolbar
     </div>
   </section>
-`),o},E={title:"Example/Page",render:()=>B(),parameters:{layout:"fullscreen"}},a={},r={play:async({canvasElement:o})=>{const e=y(o),t=e.getByRole("button",{name:/Log in/i});await s(t).toBeInTheDocument(),await b.click(t),await s(t).not.toBeInTheDocument();const n=e.getByRole("button",{name:/Log out/i});await s(n).toBeInTheDocument()}};var l,p,g;a.parameters={...a.parameters,docs:{...(l=a.parameters)==null?void 0:l.docs,source:{originalSource:"{}",...(g=(p=a.parameters)==null?void 0:p.docs)==null?void 0:g.source}}};var m,u,d;r.parameters={...r.parameters,docs:{...(m=r.parameters)==null?void 0:m.docs,source:{originalSource:`{
+`),o},I={title:"Pages/Home Page",render:()=>B(),tags:["autodocs"],parameters:{layout:"fullscreen"}},a={},r={play:async({canvasElement:o})=>{const e=y(o),t=e.getByRole("button",{name:/Log in/i});await s(t).toBeInTheDocument(),await b.click(t),await s(t).not.toBeInTheDocument();const n=e.getByRole("button",{name:/Log out/i});await s(n).toBeInTheDocument()}};var l,g,p;a.parameters={...a.parameters,docs:{...(l=a.parameters)==null?void 0:l.docs,source:{originalSource:"{}",...(p=(g=a.parameters)==null?void 0:g.docs)==null?void 0:p.source}}};var u,d,m;r.parameters={...r.parameters,docs:{...(u=r.parameters)==null?void 0:u.docs,source:{originalSource:`{
   play: async ({
     canvasElement
   }) => {
@@ -67,4 +67,4 @@ import{w as y,e as s,u as b}from"./index-DcZGqPg1.js";import{c as f}from"./Heade
     });
     await expect(logoutButton).toBeInTheDocument();
   }
-}`,...(d=(u=r.parameters)==null?void 0:u.docs)==null?void 0:d.source}}};const H=["LoggedOut","LoggedIn"];export{r as LoggedIn,a as LoggedOut,H as __namedExportsOrder,E as default};
+}`,...(m=(d=r.parameters)==null?void 0:d.docs)==null?void 0:m.source}}};const x=["LoggedOut","LoggedIn"];export{r as LoggedIn,a as LoggedOut,x as __namedExportsOrder,I as default};
