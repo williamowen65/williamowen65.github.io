@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - npm-deployment # Change this if you want to deploy from a different branch
+  workflow_dispatch: # Add this line to enable manual runs
 
 jobs:
   publish:
