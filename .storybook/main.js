@@ -2,6 +2,7 @@
 const config = {
   stories: [
     "../stories/WelcomePage.mdx",
+    "../stories/Configure.mdx",
     "../stories/**/*.mdx",
     "../stories/**/*.stories.@(js|jsx|mjs|ts|tsx|mdx)",
     "../stories/**/**/*.stories.@(js|jsx|mjs|ts|tsx|mdx)",
@@ -16,5 +17,6 @@ const config = {
     name: "@storybook/html-vite",
     options: {},
   },
+  
 };
 export default config;
