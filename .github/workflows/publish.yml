@@ -23,8 +23,8 @@ jobs:
           cache: 'npm'
 
       # Install dependencies
-      - name: Install dependencies
-        run: npm install
+      # - name: Install dependencies
+      #   run: npm install
 
       # Lint, build or test before publishing (optional)
       # Uncomment the following if you need to run build or tests before publishing
