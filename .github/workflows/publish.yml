@@ -23,8 +23,8 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Increment npm package version
-        run: npm version patch  
+      # - name: Increment npm package version
+      #   run: npm version patch  # this actually needs to happen earlier in workflow.
 
       # Optional: Run tests
       # - name: Run tests

@@ -4,9 +4,9 @@
   "description": "> This website is deployed via GitHub Pages",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "push": "cd npm-deployment && npm version patch && cd .. && git add . &&   git commit -m \"Updated npm package version\" &&  git push origin main"
   },
   "keywords": [],
   "author": "William Owen <william.owen.dev@gmail.com>",
