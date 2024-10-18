@@ -52,7 +52,7 @@ export class ledButton extends HTMLElement {
         console.log({primary})
         primary = primary === undefined ? null : primary;
         let size = this.getAttribute('size');
-        size = size === undefined ? null : "medium";
+        size = size === undefined ?  "medium" : size;
         // const label = this.getAttribute('label');
         const backgroundColor = this.getAttribute('backgroundColor');
         const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
@@ -63,4 +63,4 @@ export class ledButton extends HTMLElement {
     }
 }
 
-customElements.define('wo-led-button', ledButton)
+customElements.define('os-led-button', ledButton)

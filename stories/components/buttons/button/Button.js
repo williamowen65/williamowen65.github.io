@@ -49,10 +49,9 @@ export class button extends HTMLElement {
     }
     connectedCallback() {
         let primary = this.getAttribute('primary');
-        console.log({primary})
         primary = primary === undefined ? null : primary;
         let size = this.getAttribute('size');
-        size = size === undefined ? null : "medium";
+        size = size === undefined ? "medium" : size;
         // const label = this.getAttribute('label');
         const backgroundColor = this.getAttribute('backgroundColor');
         const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
@@ -63,4 +62,4 @@ export class button extends HTMLElement {
     }
 }
 
-customElements.define('wo-button', button)
+customElements.define('os-button', button)
