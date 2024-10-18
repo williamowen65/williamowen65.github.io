@@ -37,7 +37,7 @@ jobs:
           git rm -rf .
 
           # Copy necessary components from main
-          git checkout main -- stories .gitignore .github/workflows/publish.yml
+          git checkout main -- stories .gitignore .github/workflows/publish.yml index.js
 
              # Remove unwanted files
           find . -name "*.stories.js" -type f -delete
