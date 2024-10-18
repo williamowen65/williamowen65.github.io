@@ -38,7 +38,6 @@ jobs:
 
           # Copy necessary components from main
           git checkout main -- stories .gitignore .github/workflows/publish.yml index.js npm-deployment/package.json
-          git mv npm-deployment/package.json package.json
 
              # Remove unwanted files
           find . -name "*.stories.js" -type f -delete
