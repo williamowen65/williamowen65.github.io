@@ -31,15 +31,15 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
           # Create or switch to npm-deployment branch
-          git checkout npm-deployment || git checkout -b npm-deployment
+          git checkout -b npm-deployment
 
           # Remove all files (clean the branch)
           git rm -rf .
 
           # Copy necessary components from main
-          git checkout main -- stories .gitignore .github/workflows/publish.yml index.js
+          git checkout main -- stories .gitignore .github/workflows/publish.yml index.js npm-deployment/package.json
+          git mv npm-deployment/package.json package.json
 
-          
              # Remove unwanted files
           find . -name "*.stories.js" -type f -delete
           find . -name "*.mdx" -type f -delete
@@ -50,4 +50,3 @@ jobs:
 
           # Push to npm-deployment branch
           git push origin npm-deployment --force
- 
