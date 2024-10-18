@@ -1,4 +1,4 @@
-const n=document.createElement("template");n.innerHTML=`
+const o=document.createElement("template");o.innerHTML=`
 <style>
 .storybook-button {
   display: inline-block;
@@ -36,4 +36,4 @@ const n=document.createElement("template");n.innerHTML=`
       <slot></slot>
   </button>
 
-`;class i extends HTMLElement{constructor(){super(),this.attachShadow({mode:"open"}),this.shadowRoot.appendChild(n.content.cloneNode(!0))}connectedCallback(){let t=this.getAttribute("primary");t=t===void 0?null:t;let o=this.getAttribute("size");o=o===void 0?"medium":o;const r=this.getAttribute("backgroundColor"),s=t?"storybook-button--primary":"storybook-button--secondary",e=this.shadowRoot.querySelector("button");e.className=["storybook-button",`storybook-button--${o}`,s].join(" "),e.style.backgroundColor=r}}customElements.define("os-button",i);
+`;class a extends HTMLElement{constructor(){super(),this.attachShadow({mode:"open"}),this.shadowRoot.appendChild(o.content.cloneNode(!0))}connectedCallback(){let e=this.getAttribute("primary")||null,n=this.getAttribute("size")||"medium";const r=this.getAttribute("backgroundColor")||null,s=e?"storybook-button--primary":"storybook-button--secondary",t=this.shadowRoot.querySelector("button");t.className=["storybook-button",`storybook-button--${n}`,s].join(" "),t.style.backgroundColor=r}}customElements.define("os-button",a);
