@@ -31,7 +31,17 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
           # Create or switch to npm-deployment branch
-          git checkout -b npm-deployment
+          # git checkout npm-deployment || git checkout -b npm-deployment
+
+          # Check if the npm-deployment branch exists
+          if git rev-parse --verify npm-deployment >/dev/null 2>&1; then
+              # If the branch exists, check it out
+              git checkout npm-deployment
+          else
+              # If the branch does not exist, create it and check it out
+              git checkout -b npm-deployment
+          fi  # This marks the end of the if statement
+
 
           # Remove all files (clean the branch)
           git rm -rf .
