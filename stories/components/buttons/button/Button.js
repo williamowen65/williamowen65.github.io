@@ -48,17 +48,13 @@ export class button extends HTMLElement {
         this.shadowRoot.appendChild(template.content.cloneNode(true))
     }
     connectedCallback() {
-        let primary = this.getAttribute('primary');
-        primary = primary === undefined ? null : primary;
-        let size = this.getAttribute('size');
-        size = size === undefined ? "medium" : size;
-        // const label = this.getAttribute('label');
-        const backgroundColor = this.getAttribute('backgroundColor');
+        let primary = this.getAttribute('primary') || null;
+        let size = this.getAttribute('size') || "medium"
+        const backgroundColor = this.getAttribute('backgroundColor') || null;
         const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
         const btn = this.shadowRoot.querySelector('button')
         btn.className = ['storybook-button', `storybook-button--${size}`, mode].join(' ');
         btn.style.backgroundColor = backgroundColor;
-  
     }
 }
 

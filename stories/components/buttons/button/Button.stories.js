@@ -7,10 +7,10 @@ export default {
   title: 'Components/Buttons/Button',
   tags: ['autodocs'],
   render: (args) => {
-    return `<wo-button ` + 
+    return `<os-button ` + 
         (args.primary ? `primary="${args.primary}"` : "") +
         (args.size ? `size="${args.size}"` : "") +
-        `>${args.label}</wo-button>`
+        `>${args.label}</os-button>`
   },
   argTypes: {
     backgroundColor: { control: 'color' },
