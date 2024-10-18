@@ -1,22 +1,16 @@
 import { fn } from '@storybook/test';
 
-import { createButton } from './ledButton';
-
+import {ledButton} from './ledButton';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
-
-/**
- * Shows a button with visual effects  
- * Every now and then it will show light   
- * Click/hover will make the light react
- */
 export default {
-  title: 'Components/Buttons/LED Button',
+  title: 'Components/Buttons/ledButton',
   tags: ['autodocs'],
-  render: ({ label, ...args }) => {
-    // You can either use a function to create DOM elements or use a plain html string!
-    // return `<div>${label}</div>`;
-    return createButton({ label, ...args });
+  render: (args) => {
+    return `<wo-led-button ` + 
+        (args.primary ? `primary="${args.primary}"` : "") +
+        (args.size ? `size="${args.size}"` : "") +
+        `>${args.label}</wo-led-button>`
   },
   argTypes: {
     backgroundColor: { control: 'color' },
@@ -26,7 +20,6 @@ export default {
     size: {
       control: { type: 'select' },
       options: ['small', 'medium', 'large'],
-      
     },
   },
   // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
@@ -37,13 +30,10 @@ export default {
 export const Primary = {
   args: {
     primary: true,
-    label: 'Button',
+    label: "Button"
   },
 };
 
-/**
- * test
- */
 export const Secondary = {
   args: {
     label: 'Button',

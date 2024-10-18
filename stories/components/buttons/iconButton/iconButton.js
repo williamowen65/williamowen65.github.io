@@ -41,15 +41,19 @@ template.innerHTML = `
 
 `;
 
-class button extends HTMLElement {
+export class iconButton extends HTMLElement {
     constructor() {
         super()
         this.attachShadow({ mode: 'open' })
         this.shadowRoot.appendChild(template.content.cloneNode(true))
     }
     connectedCallback() {
-        const primary = this.getAttribute('primary');
-        const size = this.getAttribute('size');
+        let primary = this.getAttribute('primary');
+        console.log({primary})
+        primary = primary === undefined ? null : primary;
+        let size = this.getAttribute('size');
+        size = size === undefined ? null : "medium";
+        // const label = this.getAttribute('label');
         const backgroundColor = this.getAttribute('backgroundColor');
         const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
         const btn = this.shadowRoot.querySelector('button')
@@ -59,4 +63,4 @@ class button extends HTMLElement {
     }
 }
 
-customElements.define('wo-button', button)
+customElements.define('wo-icon-button', iconButton)

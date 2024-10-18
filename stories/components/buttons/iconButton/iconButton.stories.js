@@ -1,15 +1,16 @@
 import { fn } from '@storybook/test';
 
-import { createButton } from './Button';
+import {iconButton} from './iconButton';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 export default {
-  title: 'Components/Buttons/Button2',
+  title: 'Components/Buttons/iconButton',
   tags: ['autodocs'],
-  render: ({ label, ...args }) => {
-    // You can either use a function to create DOM elements or use a plain html string!
-    // return `<div>${label}</div>`;
-    return createButton({ label, ...args });
+  render: (args) => {
+    return `<wo-icon-button ` + 
+        (args.primary ? `primary="${args.primary}"` : "") +
+        (args.size ? `size="${args.size}"` : "") +
+        `>${args.label}</wo-icon-button>`
   },
   argTypes: {
     backgroundColor: { control: 'color' },
@@ -29,26 +30,26 @@ export default {
 export const Primary = {
   args: {
     primary: true,
-    label: 'Button2',
+    label: "Button"
   },
 };
 
 export const Secondary = {
   args: {
-    label: 'Button2',
+    label: 'Button',
   },
 };
 
 export const Large = {
   args: {
     size: 'large',
-    label: 'Button2',
+    label: 'Button',
   },
 };
 
 export const Small = {
   args: {
     size: 'small',
-    label: 'Button2',
+    label: 'Button',
   },
 };
