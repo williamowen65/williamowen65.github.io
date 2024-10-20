@@ -50,13 +50,16 @@ jobs:
           git checkout main -- stories .gitignore .github/workflows/publish.yml index.js npm-deployment
           git mv npm-deployment/package.json package.json
           git mv npm-deployment/package-lock.json package-lock.json
+          git mv npm-deployment/webpack.config.js webpack.config.js
 
              # Remove unwanted files
           find . -name "*.stories.js" -type f -delete
           find . -name "*.mdx" -type f -delete
 
+          npm run build
+
           # Stage and commit the changes
-          git add .
+          git add dist/main.js
           git commit -m "Sync components from main to npm-deployment"
 
           # Push to npm-deployment branch
