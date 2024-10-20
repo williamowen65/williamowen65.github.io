@@ -1,7 +1,5 @@
-import{ae as t,af as r}from"./index-Btsrd0Tl.js";import{u as o}from"./index-DA7iqmtE.js";import"./iframe-D6-Vdxql.js";import"../sb-preview/runtime.js";import"./index-7z4G-Two.js";import"./index-D-8MO0q_.js";import"./index-DrFu-skq.js";const c=()=>{const e={path:"path",svg:"svg",...o()};return t.jsx(e.svg,{viewBox:"0 0 14 14",width:"8px",height:"14px",style:{marginLeft:"4px",display:"inline-block",shapeRendering:"inherit",verticalAlign:"middle",fill:"currentColor","path fill":"currentColor"},children:t.jsx(e.path,{d:"m11.1 7.35-5.5 5.5a.5.5 0 0 1-.7-.7L10.04 7 4.9 1.85a.5.5 0 1 1 .7-.7l5.5 5.5c.2.2.2.5 0 .7Z"})})};function n(e){const i={blockquote:"blockquote",code:"code",h1:"h1",p:"p",...o(),...e.components};return t.jsxs(t.Fragment,{children:[t.jsx(r,{title:"Configure your project/Start Here"}),`
-`,t.jsx("div",{className:"sb-container",children:t.jsxs("div",{className:"sb-section-title",children:[t.jsx(i.h1,{id:"configure-your-project",children:"Configure your project"}),t.jsxs(i.blockquote,{children:[`
-`,t.jsx(i.p,{children:"TODO: Make components available via NPM"}),`
-`]}),t.jsx(i.p,{children:t.jsx(i.code,{children:"npm install os-ui-components"})})]})}),`
+import{ae as t,af as a,ag as r}from"./index-CuHvSbLz.js";import{u as o}from"./index-D8RIRfDK.js";import{Primary as s}from"./Button.stories-CK_08hI9.js";import"./iframe-D7zBPKCE.js";import"../sb-preview/runtime.js";import"./index-7z4G-Two.js";import"./index-D-8MO0q_.js";import"./index-DrFu-skq.js";import"./index-DcZGqPg1.js";import"./Button-DBH6rcwa.js";const u=()=>{const i={path:"path",svg:"svg",...o()};return t.jsx(i.svg,{viewBox:"0 0 14 14",width:"8px",height:"14px",style:{marginLeft:"4px",display:"inline-block",shapeRendering:"inherit",verticalAlign:"middle",fill:"currentColor","path fill":"currentColor"},children:t.jsx(i.path,{d:"m11.1 7.35-5.5 5.5a.5.5 0 0 1-.7-.7L10.04 7 4.9 1.85a.5.5 0 1 1 .7-.7l5.5 5.5c.2.2.2.5 0 .7Z"})})};function n(i){const e={h1:"h1",p:"p",...o(),...i.components};return t.jsxs(t.Fragment,{children:[t.jsx(a,{title:"Components/Buttons",name:"Buttons"}),`
+`,t.jsxs("div",{className:"sb-container",children:[t.jsxs("div",{className:"sb-section-title",children:[t.jsx(e.h1,{id:"overview-of-all-buttons",children:"Overview of all buttons"}),t.jsx(e.p,{children:"Lorem"})]}),t.jsx(r,{of:s})]}),`
 `,t.jsx("style",{children:`
   .sb-container {
     margin-bottom: 48px;
@@ -156,4 +154,4 @@ import{ae as t,af as r}from"./index-Btsrd0Tl.js";import{u as o}from"./index-DA7i
       margin-left: -24px;
     }
   }
-  `})]})}function g(e={}){const{wrapper:i}={...o(),...e.components};return i?t.jsx(i,{...e,children:t.jsx(n,{...e})}):n(e)}export{c as RightArrow,g as default};
+  `})]})}function w(i={}){const{wrapper:e}={...o(),...i.components};return e?t.jsx(e,{...i,children:t.jsx(n,{...i})}):n(i)}export{u as RightArrow,w as default};
