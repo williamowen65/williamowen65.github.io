@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
     entry: './index.js',
     module: {
@@ -6,6 +8,9 @@ module.exports = {
             { test: /\.css$/, use: ['raw-loader']},
             { test: /\.html$/, use: 'html-loader' }
         ],
+      },
+      output: {
+        path: path.resolve(__dirname, 'npm-deployment'),
       },
     
   };
