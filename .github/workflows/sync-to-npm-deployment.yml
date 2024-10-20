@@ -32,6 +32,7 @@ jobs:
 
           # Build dist folder with main.js (all of the components)
           # This process could be updated to create individual imports for each component
+          npm i
           npm run build
 
           # Create or switch to npm-deployment branch
