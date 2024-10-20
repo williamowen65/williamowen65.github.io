@@ -51,6 +51,7 @@ jobs:
           # Move all files and folders from npm-deployment to root level
           mv npm-deployment/* .
 
+          npm i
 
           # Stage and commit the changes
           git add .
