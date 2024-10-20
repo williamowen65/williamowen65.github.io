@@ -6,6 +6,7 @@
   "scripts": {
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
+    "build": "npx webpack build",
     "push": "cd npm-deployment && npm version patch && cd .. && git add . &&   git commit -m \"Updated npm package version\" &&  git push origin main"
   },
   "keywords": [],
@@ -20,9 +21,14 @@
     "@storybook/html": "^8.3.5",
     "@storybook/html-vite": "^8.3.5",
     "@storybook/test": "^8.3.5",
-    "raw-loader": "^4.0.2",
     "storybook": "^8.3.5",
     "vite-plugin-css": "^1.0.4",
-    "vite-plugin-html": "^3.2.2"
+    "vite-plugin-html": "^3.2.2",
+    "css-loader": "^7.1.2",
+    "html-loader": "^5.1.0",
+    "raw-loader": "^4.0.2",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.95.0",
+    "webpack-cli": "^5.1.4"
   }
 }

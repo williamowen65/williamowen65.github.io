@@ -30,6 +30,10 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
+          # Build dist folder with main.js (all of the components)
+          # This process could be updated to create individual imports for each component
+          npm run build
+
           # Create or switch to npm-deployment branch
           # git checkout npm-deployment || git checkout -b npm-deployment
 
@@ -46,24 +50,12 @@ jobs:
           # Remove all files (clean the branch)
           git rm -rf .
 
-          git commit -m "Clean npm-deployment branch"
-          git push origin npm-deployment --force
-
           # Copy necessary components from main
-          git checkout main -- stories .gitignore .github/workflows/publish.yml index.js npm-deployment
-          git mv npm-deployment/package.json package.json
-          git mv npm-deployment/package-lock.json package-lock.json
-          git mv npm-deployment/webpack.config.js webpack.config.js
-
-             # Remove unwanted files
-          find . -name "*.stories.js" -type f -delete
-          find . -name "*.mdx" -type f -delete
-
-          npm install
-          npm run build
+          git checkout main -- dist/main.
+          git mv dist/main.js main.js
 
           # Stage and commit the changes
-          git add dist/main.js
+          git add .
           git commit -m "Sync components from main to npm-deployment"
 
           # Push to npm-deployment branch
