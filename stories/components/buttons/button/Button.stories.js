@@ -7,7 +7,6 @@ export default {
   title: 'Components/Buttons/Button',
   tags: ['autodocs'],
   render: (args) => {
-    console.log({args})
     return `<os-button ` + 
         (args.primary ? `primary="${args.primary}" ` : "") +
         (args.size ? `size="${args.size}" ` : "") +

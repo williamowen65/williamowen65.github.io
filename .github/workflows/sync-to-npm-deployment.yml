@@ -1,3 +1,5 @@
+
+# Ideally this workflow would exist in a npm-deployment, but for the sake of simplicity, we will add it to the same folder.
 name: Sync to npm-deployment
 
 on:
@@ -47,7 +49,7 @@ jobs:
           git rm -rf .
 
           # Copy necessary components from main
-          git checkout main  npm-deployment .github/workflows/publish.yml
+          git checkout main  npm-deployment .github/workflows/publish.yml .gitignore
           # Move all files and folders from npm-deployment to root level
           mv npm-deployment/* .
 

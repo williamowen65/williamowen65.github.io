@@ -5,7 +5,6 @@ import cssContent from './Button.css?raw';
 // Fetch and create custom element
 
   createCustomElement('os-button',function() {
-    
     let primary = this.getAttribute('primary') || null;
     let size = this.getAttribute('size') || "medium"
     const backgroundColor = this.getAttribute('backgroundColor') || null;
