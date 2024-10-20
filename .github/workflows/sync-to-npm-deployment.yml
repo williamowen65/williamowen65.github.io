@@ -4,11 +4,7 @@ on:
   push:
     branches:
       - main
-  workflow_dispatch: # Enables manual runs
-
-permissions: 
-  actions: write
-  contents: write
+  workflow_dispatch: # Add this line to enable manual runs
 
 jobs:
   sync-npm-branch:
@@ -28,35 +24,37 @@ jobs:
           node-version: '18'
           cache: 'npm'
 
-      # Sync npm-deployment branch
+      # Clean npm-deployment branch
       - name: Sync npm-deployment branch
-        env:
-          GITHUB_TOKEN: ${{ secrets.MY_PAT }} # Use the PAT here
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
+          # Create or switch to npm-deployment branch
+          # git checkout npm-deployment || git checkout -b npm-deployment
+
           # Check if the npm-deployment branch exists
-          if git show-ref --verify --quiet refs/heads/npm-deployment; then
+          if git rev-parse --verify npm-deployment >/dev/null 2>&1; then
               # If the branch exists, check it out
               git checkout npm-deployment
           else
               # If the branch does not exist, create it and check it out
               git checkout -b npm-deployment
-          fi
+          fi  # This marks the end of the if statement
+
 
           # Remove all files (clean the branch)
           git rm -rf .
 
           # Copy necessary components from main
-          git checkout main  npm-deployment
-        
+          git checkout main  npm-deployment .github/workflows/publish.yml
           # Move all files and folders from npm-deployment to root level
-          find npm-deployment -mindepth 1 -maxdepth 1 -exec mv -t . {} +
+          mv npm-deployment/* .
+
 
           # Stage and commit the changes
           git add .
-          git commit -m "Sync components from main to npm-deployment" || echo "No changes to commit"
+          git commit -m "Sync components from main to npm-deployment"
 
           # Push to npm-deployment branch
           git push origin npm-deployment --force
