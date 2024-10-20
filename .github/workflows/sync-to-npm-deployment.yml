@@ -49,8 +49,10 @@ jobs:
           git rm -rf .
 
           # Copy necessary components from main
-          git checkout main  npm-deployment/. npm-deployment/.*
+          git checkout main  npm-deployment
         
+          # Move all files and folders from npm-deployment to root level
+          find npm-deployment -mindepth 1 -maxdepth 1 -exec mv -t . {} +
 
           # Stage and commit the changes
           git add .
