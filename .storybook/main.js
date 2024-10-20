@@ -1,4 +1,4 @@
-/** @type { import('@storybook/html-vite').StorybookConfig } */
+// .storybook/main.js
 const config = {
   stories: [
     "../stories/WelcomePage.mdx",
@@ -17,6 +17,18 @@ const config = {
     name: "@storybook/html-vite",
     options: {},
   },
-  
+  webpackFinal: async (config) => {
+    config.module.rules.push({
+      test: /\.html$/i,
+      use: 'raw-loader',
+    });
+    config.module.rules.push({
+      test: /\.css$/i,
+      use: 'raw-loader',
+    });
+
+    return config;
+  },
 };
-export default config;
+
+module.exports = config;

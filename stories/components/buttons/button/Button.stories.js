@@ -1,21 +1,23 @@
 import { fn } from '@storybook/test';
 
-import {button} from './Button';
+import './Button';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 export default {
   title: 'Components/Buttons/Button',
   tags: ['autodocs'],
   render: (args) => {
+    console.log({args})
     return `<os-button ` + 
-        (args.primary ? `primary="${args.primary}"` : "") +
-        (args.size ? `size="${args.size}"` : "") +
+        (args.primary ? `primary="${args.primary}" ` : "") +
+        (args.size ? `size="${args.size}" ` : "") +
+        (args.onclick ? `onclick='` + String(args.onclick) + "'" : "")+  // use of single quotes around args.onclick b/c of fn()
         `>${args.label}</os-button>`
   },
   argTypes: {
     backgroundColor: { control: 'color' },
     label: { control: 'text' },
-    onClick: { action: 'onClick' },
+    onclick: { action: 'onClick' },
     primary: { control: 'boolean' },
     size: {
       control: { type: 'select' },
@@ -23,7 +25,8 @@ export default {
     },
   },
   // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
-  args: { onClick: fn() },
+  args: { onclick: fn },
+  // args: { onclick: 'alert("hi")' },
 };
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args

@@ -3,10 +3,21 @@
   "version": "1.0.6",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+     "build": "vite build"
   },
   "keywords": [],
   "author": "William Owen <william.owen.dev@gmail.com>",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "module-alias": "^2.2.3"
+  },
+  "_moduleAliases": {
+    "@components": "stories/components",
+    "@buttons": "stories/components/buttons"
+  },
+  "devDependencies": {
+    "vite": "^5.4.9"
+  }
 }

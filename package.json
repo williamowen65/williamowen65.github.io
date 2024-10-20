@@ -20,6 +20,9 @@
     "@storybook/html": "^8.3.5",
     "@storybook/html-vite": "^8.3.5",
     "@storybook/test": "^8.3.5",
-    "storybook": "^8.3.5"
+    "raw-loader": "^4.0.2",
+    "storybook": "^8.3.5",
+    "vite-plugin-css": "^1.0.4",
+    "vite-plugin-html": "^3.2.2"
   }
 }
