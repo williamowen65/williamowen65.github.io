@@ -30,11 +30,6 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          # Build dist folder with main.js (all of the components)
-          # This process could be updated to create individual imports for each component
-          npm i
-          npm run build
-
           # Create or switch to npm-deployment branch
           # git checkout npm-deployment || git checkout -b npm-deployment
 

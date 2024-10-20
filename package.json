@@ -7,7 +7,7 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "build": "npx webpack build",
-    "push": "cd npm-deployment && npm version patch && cd .. && git add . &&   git commit -m \"Updated npm package version\" &&  git push origin main"
+    "push": "cd npm-deployment && npm version patch && cd .. && npm run build &&  git add . &&   git commit -m \"Updated npm package version\" &&  git push origin main"
   },
   "keywords": [],
   "author": "William Owen <william.owen.dev@gmail.com>",
