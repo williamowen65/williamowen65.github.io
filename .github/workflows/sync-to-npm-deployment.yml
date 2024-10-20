@@ -50,7 +50,7 @@ jobs:
           git checkout main  npm-deployment
            # Move all files and folders from npm-deployment to root level
           mv npm-deployment/* .
-          mv npm-deployment/.* . 2>/dev/null || true
+          sudo mv npm-deployment/.* . 2>/dev/null || true
 
 
           # Stage and commit the changes
