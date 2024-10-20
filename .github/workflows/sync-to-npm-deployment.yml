@@ -6,6 +6,9 @@ on:
       - main
   workflow_dispatch: # Add this line to enable manual runs
 
+permissions: 
+  actions: write
+
 jobs:
   sync-npm-branch:
     runs-on: ubuntu-latest
