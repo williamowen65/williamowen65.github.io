@@ -1,4 +1,4 @@
-import '../../components/buttons/button/Button';
+import '../../components/buttons/button/Button.js';
 import './header.css';
 
 export const createHeader = ({ user, onLogout, onLogin, onCreateAccount }) => {
@@ -29,10 +29,10 @@ export const createHeader = ({ user, onLogout, onLogin, onCreateAccount }) => {
     const welcomeMessage = `<span class="welcome">Welcome, <b>${user.name}</b>!</span>`;
     account.innerHTML = welcomeMessage;
     // account.appendChild(createButton({ size: 'small', label: 'Log out', onClick: onLogout }));
-    account.insertAdjacentHTML('beforeend','<wo-button size="small" onClick="onLogout">Log out</wo-button>');
+    account.insertAdjacentHTML('beforeend','<os-button size="small" onClick="onLogout">Log out</os-button>');
   } else {
-    account.insertAdjacentHTML('beforeend','<wo-button size="small" onClick="onLogin">Log in</wo-button>');
-    account.insertAdjacentHTML('beforeend','<wo-button primary="true" size="small" onClick="onCreateAccount">Sign up</wo-button>');
+    account.insertAdjacentHTML('beforeend','<os-button size="small" onClick="onLogin">Log in</os-button>');
+    account.insertAdjacentHTML('beforeend','<os-button primary="true" size="small" onClick="onCreateAccount">Sign up</os-button>');
   }
   wrapper.appendChild(account);
   header.appendChild(wrapper);

@@ -3,11 +3,16 @@ import { fn } from '@storybook/test';
 import './Button';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
+/**
+ * This button is a simple button that can be used to trigger actions.  
+ * Styles need an update.
+ */
 export default {
   title: 'Components/Buttons/Button',
   tags: ['autodocs'],
   render: (args) => {
     return `<os-button ` + 
+        (args.backgroundColor ? `backgroundColor="${args.backgroundColor}" ` : "") +
         (args.primary ? `primary="${args.primary}" ` : "") +
         (args.size ? `size="${args.size}" ` : "") +
         (args.onclick ? `onclick='` + String(args.onclick) + "'" : "")+  // use of single quotes around args.onclick b/c of fn()
@@ -32,7 +37,7 @@ export default {
 export const Primary = {
   args: {
     primary: true,
-    label: "Button"
+    label: "Button",
   },
 };
 
