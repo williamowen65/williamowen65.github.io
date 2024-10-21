@@ -13,7 +13,7 @@ export default {
   title: 'Components/Inputs/Dial',
   tags: ['autodocs'],
   render: (args) => {
-    return `<os-dial>${args.label}</os-dial>`
+    return `<os-dial></os-dial>`
   },
   argTypes: {
     // backgroundColor: { control: 'color' },
@@ -26,7 +26,7 @@ export default {
     // },
   },
   // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
-  //   args: { onclick: fn },
+    args: { onchange: fn },
   // args: { onclick: 'alert("hi")' },
 };
 
