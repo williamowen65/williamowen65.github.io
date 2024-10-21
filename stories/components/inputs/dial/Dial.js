@@ -8,7 +8,7 @@ createCustomElement('os-dial', function () {
   document.addEventListener('DOMContentLoaded', (event) => {
     // Get Props
     const defaultDialValue = this.getAttribute('defaultDialValue') || 5;
-    const onChange = this.data.onChange || null;
+    const onChange = this.data?.onChange || null;
     const range = this.hasAttribute('range') ? this.getAttribute('range').split(',')  : [0, 10];
 
     // Read input value from class dial__input
