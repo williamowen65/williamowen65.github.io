@@ -1,7 +1,7 @@
 
 /* Define variables? */
 :host {
-    --theme-color: #3498db; /* Define the theme color within the shadow DOM */
+    --theme-color: #8a2e44; /* Define the theme color within the shadow DOM */
 }
 
 .dial input{
@@ -11,7 +11,7 @@
 .dial-container{
     position: relative;
     min-height: 100px;
-    background: red;
+    background: #baff41;
     width: 50px;
     display: flex;
     align-items: center;
@@ -57,4 +57,12 @@
 .dial__label{
     align-self:flex-end;
     text-align: center;
+}
+
+.shadow {
+    box-shadow: inset 0 0 16px #61440e;
+}
+
+.userVote{
+    color: white
 }

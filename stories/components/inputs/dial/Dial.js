@@ -3,18 +3,18 @@ import htmlContent from './Dial.html?raw';
 import cssContent from './Dial.css?raw';
 
 
-
-
 // Fetch and create custom element
 createCustomElement('os-dial', function () {
   document.addEventListener('DOMContentLoaded', (event) => {
     // Get Props
     const defaultDialValue = this.getAttribute('defaultDialValue') || 5;
+    const onChange = this.data.onChange || null;
     const range = this.hasAttribute('range') ? this.getAttribute('range').split(',')  : [0, 10];
 
     // Read input value from class dial__input
     const input = this.shadowRoot.querySelector('.dial__input');
-    const dialContainer = this.shadowRoot.querySelector('.dial__value');
+    const dialValue = this.shadowRoot.querySelector('.dial__value');
+    const dialContainer = this.shadowRoot.querySelector('.dial-container');
     
     // apply range to range input
     input.setAttribute('min', range[0]);
@@ -33,13 +33,17 @@ createCustomElement('os-dial', function () {
       const value = +e.target.value;
       // Report value in .dial__value
       const dialValue = this.shadowRoot.querySelector('.dial__value');
-      dialValue.innerHTML = `${getDialValueHTML(value + 1)}<br>${getDialValueHTML(value)}<br>${getDialValueHTML(value - 1)}`;
+      dialValue.innerHTML = `${getDialValueHTML(value + 1)}<br><div class="userVote">${getDialValueHTML(value)}</div><br>${getDialValueHTML(value - 1)}`;
+      // Report value from component in callback
+      if(onChange) {
+        onChange(e)
+      }
     }
 
     // Set default value  
     setDailValueHTML.call(this, { target: { value: defaultDialValue } });
 
-    if (dialContainer) {
+    if (dialValue) {
       const startInteraction = (e) => {
         e.preventDefault(); // Prevent default dragging behavior
 
@@ -67,8 +71,8 @@ createCustomElement('os-dial', function () {
         document.addEventListener('touchend', endInteraction);
       };
 
-      dialContainer.addEventListener('mousedown', startInteraction);
-      dialContainer.addEventListener('touchstart', startInteraction);
+      dialValue.addEventListener('mousedown', startInteraction);
+      dialValue.addEventListener('touchstart', startInteraction);
     }
   });
 }, htmlContent, cssContent);

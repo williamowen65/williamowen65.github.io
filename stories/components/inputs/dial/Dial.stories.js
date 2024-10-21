@@ -1,6 +1,7 @@
 import { fn } from '@storybook/test';
 
 import './Dial.js';
+import dataMockWrapper from '../../../utils/DataMockWrapper.js';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 
@@ -16,6 +17,7 @@ export default {
     return `<os-dial ` +
      (args.defaultDialValue ? `defaultDialValue="${args.defaultDialValue}" ` : "") +
      (args.range ? `range="${args.range}" ` : "") +
+     (args.onChange ? `onChange='${args.onChange}'` : "") +
     `></os-dial>`
   },
   argTypes: {
@@ -29,7 +31,7 @@ export default {
     // },
   },
   // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
-    args: { onchange: fn },
+    // args: { onchange: fn },
   // args: { onclick: 'alert("hi")' },
 };
 
@@ -41,6 +43,15 @@ export const Primary = {
     // primary: true,
     // label: "Button"
     defaultDialValue: 2,
-    range: [-10, 10]
+    range: [0, 10],
   },
+  decorators: [
+    Story => {
+      return dataMockWrapper(Story, {
+        onChange: (e) => {
+          console.log('onChange', e.target.value);
+        }
+      });
+    }
+  ]
 };
