@@ -1,10 +1,34 @@
-import{ae as t,af as r}from"./index-C7dCk1T2.js";import{u as o}from"./index-DXM92UQ_.js";import"./iframe-DgF532US.js";import"../sb-preview/runtime.js";import"./index-7z4G-Two.js";import"./index-D-8MO0q_.js";import"./index-DrFu-skq.js";const g=()=>{const e={path:"path",svg:"svg",...o()};return t.jsx(e.svg,{viewBox:"0 0 14 14",width:"8px",height:"14px",style:{marginLeft:"4px",display:"inline-block",shapeRendering:"inherit",verticalAlign:"middle",fill:"currentColor","path fill":"currentColor"},children:t.jsx(e.path,{d:"m11.1 7.35-5.5 5.5a.5.5 0 0 1-.7-.7L10.04 7 4.9 1.85a.5.5 0 1 1 .7-.7l5.5 5.5c.2.2.2.5 0 .7Z"})})};function n(e){const i={blockquote:"blockquote",br:"br",h1:"h1",p:"p",...o(),...e.components};return t.jsxs(t.Fragment,{children:[t.jsx(r,{title:"Configure your project/Contribute"}),`
-`,t.jsx("div",{className:"sb-container",children:t.jsxs("div",{className:"sb-section-title",children:[t.jsx(i.h1,{id:"contribute",children:"Contribute"}),t.jsxs(i.blockquote,{children:[`
-`,t.jsxs(i.p,{children:["View issues",t.jsx(i.br,{}),`
-`,"Make PRs",t.jsx(i.br,{}),`
+import{ae as e,af as s}from"./index-D8QoYjyH.js";import{u as t}from"./index-CbD5Ew5H.js";import"./iframe-M53IO7g1.js";import"../sb-preview/runtime.js";import"./index-7z4G-Two.js";import"./index-D-8MO0q_.js";import"./index-DrFu-skq.js";const h=()=>{const n={path:"path",svg:"svg",...t()};return e.jsx(n.svg,{viewBox:"0 0 14 14",width:"8px",height:"14px",style:{marginLeft:"4px",display:"inline-block",shapeRendering:"inherit",verticalAlign:"middle",fill:"currentColor","path fill":"currentColor"},children:e.jsx(n.path,{d:"m11.1 7.35-5.5 5.5a.5.5 0 0 1-.7-.7L10.04 7 4.9 1.85a.5.5 0 1 1 .7-.7l5.5 5.5c.2.2.2.5 0 .7Z"})})};function o(n){const i={blockquote:"blockquote",br:"br",code:"code",h1:"h1",h2:"h2",h3:"h3",li:"li",p:"p",ul:"ul",...t(),...n.components};return e.jsxs(e.Fragment,{children:[e.jsx(s,{title:"Configure your project/Contribute"}),`
+`,e.jsx("div",{className:"sb-container",children:e.jsxs("div",{className:"sb-section-title",children:[e.jsx(i.h1,{id:"contribute",children:"Contribute"}),e.jsxs(i.blockquote,{children:[`
+`,e.jsxs(i.p,{children:["View issues",e.jsx(i.br,{}),`
+`,"Make PRs",e.jsx(i.br,{}),`
 `,"Guidelines"]}),`
+`]}),e.jsx(i.h2,{id:"guidelines",children:"Guidelines"}),e.jsx(i.p,{children:"In order to contribute to this project, you need to follow the guidelines below:"}),e.jsx(i.h3,{id:"creating-a-new-component",children:"Creating a new component"}),e.jsxs(i.ul,{children:[`
+`,e.jsxs(i.li,{children:["Create a folder for your component in the ",e.jsx(i.code,{children:"stories"})," folder",`
+`,e.jsxs(i.ul,{children:[`
+`,e.jsx(i.li,{children:"Try to place it where it makes sense"}),`
+`,e.jsxs(i.li,{children:["A component folder should have:",`
+`,e.jsxs(i.ul,{children:[`
+`,e.jsx(i.li,{children:"A stories.js file"}),`
+`,e.jsxs(i.li,{children:["A js file (component file)",`
+`,e.jsxs(i.ul,{children:[`
+`,e.jsxs(i.li,{children:["Use the ",e.jsx(i.code,{children:"os-"})," prefix for all components"]}),`
+`]}),`
+`]}),`
+`,e.jsx(i.li,{children:"A css file (component styles)"}),`
+`,e.jsxs(i.li,{children:["An HTML file (component markup)",`
+`,e.jsxs(i.ul,{children:[`
+`,e.jsx(i.li,{children:"Define compoents as custom HTML elements"}),`
+`]}),`
+`]}),`
+`]}),`
+`]}),`
+`]}),`
+`]}),`
+`,e.jsxs(i.li,{children:["Import your compoent file in the ",e.jsx(i.code,{children:"index.js"})," file"]}),`
+`,e.jsxs(i.li,{children:["Tag your PR with the ",e.jsx(i.code,{children:"new components"})," tag"]}),`
 `]})]})}),`
-`,t.jsx("style",{children:`
+`,e.jsx("style",{children:`
   .sb-container {
     margin-bottom: 48px;
   }
@@ -158,4 +182,4 @@ import{ae as t,af as r}from"./index-C7dCk1T2.js";import{u as o}from"./index-DXM9
       margin-left: -24px;
     }
   }
-  `})]})}function c(e={}){const{wrapper:i}={...o(),...e.components};return i?t.jsx(i,{...e,children:t.jsx(n,{...e})}):n(e)}export{g as RightArrow,c as default};
+  `})]})}function m(n={}){const{wrapper:i}={...t(),...n.components};return i?e.jsx(i,{...n,children:e.jsx(o,{...n})}):o(n)}export{h as RightArrow,m as default};

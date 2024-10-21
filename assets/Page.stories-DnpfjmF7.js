@@ -1,4 +1,4 @@
-import{w as y,e as s,u as b}from"./index-DcZGqPg1.js";import{c as f}from"./Header-DRTsQ5CN.js";import"./Button-BTU4bRlW.js";import"./custom-element-BSS606lH.js";const B=()=>{const o=document.createElement("article");let e=null,t=null;const n=()=>{const i=document.getElementsByTagName("article")[0];i.replaceChild(c(),i.firstChild)},h=()=>{e={name:"Jane Doe"},n()},v=()=>{e=null,n()},w=()=>{e={name:"Jane Doe"},n()},c=()=>f({onLogin:h,onLogout:v,onCreateAccount:w,user:e});return t=c(),o.appendChild(t),o.insertAdjacentHTML("beforeend",`
+import{w as y,e as s,u as b}from"./index-DcZGqPg1.js";import{c as f}from"./Header-DmgHhnG2.js";import"./Button-BTU4bRlW.js";import"./custom-element-BSS606lH.js";const B=()=>{const o=document.createElement("article");let e=null,t=null;const n=()=>{const i=document.getElementsByTagName("article")[0];i.replaceChild(c(),i.firstChild)},h=()=>{e={name:"Jane Doe"},n()},v=()=>{e=null,n()},w=()=>{e={name:"Jane Doe"},n()},c=()=>f({onLogin:h,onLogout:v,onCreateAccount:w,user:e});return t=c(),o.appendChild(t),o.insertAdjacentHTML("beforeend",`
   <section class="storybook-page">
     <h2>Pages in Storybook</h2>
     <p>

@@ -1,8 +1,7 @@
-import{ae as t,af as r}from"./index-C7dCk1T2.js";import{u as o}from"./index-DXM92UQ_.js";import"./iframe-DgF532US.js";import"../sb-preview/runtime.js";import"./index-7z4G-Two.js";import"./index-D-8MO0q_.js";import"./index-DrFu-skq.js";const c=()=>{const e={path:"path",svg:"svg",...o()};return t.jsx(e.svg,{viewBox:"0 0 14 14",width:"8px",height:"14px",style:{marginLeft:"4px",display:"inline-block",shapeRendering:"inherit",verticalAlign:"middle",fill:"currentColor","path fill":"currentColor"},children:t.jsx(e.path,{d:"m11.1 7.35-5.5 5.5a.5.5 0 0 1-.7-.7L10.04 7 4.9 1.85a.5.5 0 1 1 .7-.7l5.5 5.5c.2.2.2.5 0 .7Z"})})};function n(e){const i={blockquote:"blockquote",code:"code",h1:"h1",p:"p",...o(),...e.components};return t.jsxs(t.Fragment,{children:[t.jsx(r,{title:"Configure your project/Start Here"}),`
-`,t.jsx("div",{className:"sb-container",children:t.jsxs("div",{className:"sb-section-title",children:[t.jsx(i.h1,{id:"configure-your-project",children:"Configure your project"}),t.jsxs(i.blockquote,{children:[`
-`,t.jsx(i.p,{children:"TODO: Make components available via NPM"}),`
-`]}),t.jsx(i.p,{children:t.jsx(i.code,{children:"npm install os-ui-components"})})]})}),`
-`,t.jsx("style",{children:`
+import{ae as e,af as r}from"./index-D8QoYjyH.js";import{u as o}from"./index-CbD5Ew5H.js";import"./iframe-M53IO7g1.js";import"../sb-preview/runtime.js";import"./index-7z4G-Two.js";import"./index-D-8MO0q_.js";import"./index-DrFu-skq.js";const x=()=>{const i={path:"path",svg:"svg",...o()};return e.jsx(i.svg,{viewBox:"0 0 14 14",width:"8px",height:"14px",style:{marginLeft:"4px",display:"inline-block",shapeRendering:"inherit",verticalAlign:"middle",fill:"currentColor","path fill":"currentColor"},children:e.jsx(i.path,{d:"m11.1 7.35-5.5 5.5a.5.5 0 0 1-.7-.7L10.04 7 4.9 1.85a.5.5 0 1 1 .7-.7l5.5 5.5c.2.2.2.5 0 .7Z"})})};function n(i){const t={code:"code",h1:"h1",h2:"h2",p:"p",...o(),...i.components};return e.jsxs(e.Fragment,{children:[e.jsx(r,{title:"Configure your project/Start Here"}),`
+`,e.jsx("div",{className:"sb-container",children:e.jsxs("div",{className:"sb-section-title",children:[e.jsx(t.h1,{id:"configure-your-project",children:"Configure your project"}),e.jsxs(t.p,{children:["To use any of these components in your project, you need to install the ",e.jsx(t.code,{children:"os-ui-components"})," package."]}),e.jsx(t.p,{children:e.jsx(t.code,{children:"npm install os-ui-components"})}),e.jsx(t.p,{children:"Add it to your project by including a script tag in your HTML file:"}),e.jsx(t.p,{children:e.jsx(t.code,{children:'<script src="node_modules/os-ui-components/main.js"><\/script>'})}),e.jsx(t.p,{children:"This package has no dependencies, so you can use it in any project. The components are built using web components, so they can be used in any framework or library."}),e.jsx(t.p,{children:"Currently it only includes a few components, but more will be added soon. Ths script tag currently imports the full library, but in the future, you will be able to import individual components."}),e.jsx(t.h2,{id:"available-components",children:"Available components"}),e.jsxs(t.p,{children:[e.jsx(t.code,{children:"<os-button>"}),`
+`,e.jsx(t.code,{children:"<os-dial>"})]})]})}),`
+`,e.jsx("style",{children:`
   .sb-container {
     margin-bottom: 48px;
   }
@@ -156,4 +155,4 @@ import{ae as t,af as r}from"./index-C7dCk1T2.js";import{u as o}from"./index-DXM9
       margin-left: -24px;
     }
   }
-  `})]})}function g(e={}){const{wrapper:i}={...o(),...e.components};return i?t.jsx(i,{...e,children:t.jsx(n,{...e})}):n(e)}export{c as RightArrow,g as default};
+  `})]})}function h(i={}){const{wrapper:t}={...o(),...i.components};return t?e.jsx(t,{...i,children:e.jsx(n,{...i})}):n(i)}export{x as RightArrow,h as default};
