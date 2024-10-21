@@ -26,6 +26,14 @@ const config = {
       test: /\.css$/i,
       use: 'raw-loader',
     });
+    config.module.rules.push({
+      test: /\.scss$/i,
+      use: 'raw-loader ! sass-loader',
+    });
+    config.module.rules.push({
+      test: /\.svg$/i,
+      use: 'raw-loader',
+    });
 
     return config;
   },
