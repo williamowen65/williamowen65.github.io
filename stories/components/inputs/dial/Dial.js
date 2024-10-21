@@ -3,21 +3,31 @@ import htmlContent from './Dial.html?raw';
 import cssContent from './Dial.css?raw';
 
 
-function getDialValueHTML(value) {
-  if (value < 0 || value > 10) {
-    return '<div style="opacity: 0; user-select:none">n/a</div>';
-  }
-  return `<div>${value}</div>`;
-}
+
 
 // Fetch and create custom element
 createCustomElement('os-dial', function () {
   document.addEventListener('DOMContentLoaded', (event) => {
-    const defaultDialValue = 5;
+    // Get Props
+    const defaultDialValue = this.getAttribute('defaultDialValue') || 5;
+    const range = this.hasAttribute('range') ? this.getAttribute('range').split(',')  : [0, 10];
+
     // Read input value from class dial__input
     const input = this.shadowRoot.querySelector('.dial__input');
     const dialContainer = this.shadowRoot.querySelector('.dial__value');
+    
+    // apply range to range input
+    input.setAttribute('min', range[0]);
+    input.setAttribute('max', range[1]);
 
+    // apply range to range helper function
+    function getDialValueHTML(value) {
+      if (value < range[0] || value > range[1]) {
+        return '<div style="opacity: 0; user-select:none">n/a</div>';
+      }
+      return `<div>${value}</div>`;
+    }
+    
     input.addEventListener('change', setDailValueHTML.bind(this));
     function setDailValueHTML(e) {
       const value = +e.target.value;
@@ -38,7 +48,8 @@ createCustomElement('os-dial', function () {
           const rect = dialContainer.getBoundingClientRect();
           const clientY = event.clientY || event.touches[0].clientY;
           const offsetY = clientY - rect.top;
-          const newValue = Math.max(0, Math.min(10, 10 - (offsetY / rect.height) * 10));
+          // Apply custom range to the dial
+          const newValue = Math.max(range[0], Math.min(range[1], range[1] - (offsetY / rect.height) * range[1]));
           input.value = newValue;
           input.dispatchEvent(new Event('change'));
         };

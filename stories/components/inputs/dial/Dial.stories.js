@@ -13,7 +13,10 @@ export default {
   title: 'Components/Inputs/Dial',
   tags: ['autodocs'],
   render: (args) => {
-    return `<os-dial></os-dial>`
+    return `<os-dial ` +
+     (args.defaultDialValue ? `defaultDialValue="${args.defaultDialValue}" ` : "") +
+     (args.range ? `range="${args.range}" ` : "") +
+    `></os-dial>`
   },
   argTypes: {
     // backgroundColor: { control: 'color' },
@@ -37,5 +40,7 @@ export const Primary = {
   args: {
     // primary: true,
     // label: "Button"
+    defaultDialValue: 2,
+    range: [-10, 10]
   },
 };
