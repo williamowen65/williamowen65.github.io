@@ -32,7 +32,6 @@
 }
 .dial__value, .dial__lens{
     width: 50px;
-    cursor: grab;
     height: 30px;
     display: flex;
     flex-direction: column;
@@ -40,6 +39,9 @@
     justify-content: center;
     text-align: center;
     z-index: 1;
+}
+.dial__value .userVote, .dial__lens{  
+    cursor: grab;
 }
 .dial__lens{
     background: var(--theme-color); /* Use the theme color */

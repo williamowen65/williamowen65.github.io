@@ -14,6 +14,7 @@ createCustomElement('os-dial', function () {
     // Read input value from class dial__input
     const input = this.shadowRoot.querySelector('.dial__input');
     const dialValue = this.shadowRoot.querySelector('.dial__value');
+    const dialLens = this.shadowRoot.querySelector('.dial__lens');
     const dialContainer = this.shadowRoot.querySelector('.dial-container');
     
     // apply range to range input
@@ -35,6 +36,7 @@ createCustomElement('os-dial', function () {
       const dialValue = this.shadowRoot.querySelector('.dial__value');
       dialValue.innerHTML = `${getDialValueHTML(value + 1)}<br><div class="userVote">${getDialValueHTML(value)}</div><br>${getDialValueHTML(value - 1)}`;
       // Report value from component in callback
+    
       if(onChange) {
         onChange(e)
       }
@@ -53,8 +55,11 @@ createCustomElement('os-dial', function () {
           const clientY = event.clientY || event.touches[0].clientY;
           const offsetY = clientY - rect.top;
           // Apply custom range to the dial
-          const newValue = Math.max(range[0], Math.min(range[1], range[1] - (offsetY / rect.height) * range[1]));
+          const newValue = Math.max(range[0] - rect.height * 30, Math.min(range[1], range[1] - (offsetY / rect.height) * range[1]) * 3.5);
           input.value = newValue;
+
+          // Drag the lens
+          dragDialLens(newValue)
           input.dispatchEvent(new Event('change'));
         };
 
@@ -63,6 +68,7 @@ createCustomElement('os-dial', function () {
           document.removeEventListener('mouseup', endInteraction);
           document.removeEventListener('touchmove', moveInteraction);
           document.removeEventListener('touchend', endInteraction);
+          dragDialLens(0)
         };
 
         document.addEventListener('mousemove', moveInteraction);
@@ -73,6 +79,11 @@ createCustomElement('os-dial', function () {
 
       dialValue.addEventListener('mousedown', startInteraction);
       dialValue.addEventListener('touchstart', startInteraction);
+    }
+
+    function dragDialLens(offsetY) {
+     
+      dialLens.style.top = `${-offsetY}px`;
     }
   });
 }, htmlContent, cssContent);
