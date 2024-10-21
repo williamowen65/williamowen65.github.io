@@ -2,19 +2,32 @@ import { createCustomElement } from "../../../utils/custom-element.js";
 import htmlContent from './Dial.html?raw';
 import cssContent from './Dial.css?raw';
 
+
+function getDialValueHTML(value) {
+  if (value < 0 || value > 10) {
+    return '<div style="opacity: 0; user-select:none">n/a</div>';
+  }
+  return `<div>${value}</div>`;
+}
+
 // Fetch and create custom element
 createCustomElement('os-dial', function () {
   document.addEventListener('DOMContentLoaded', (event) => {
+    const defaultDialValue = 5;
     // Read input value from class dial__input
     const input = this.shadowRoot.querySelector('.dial__input');
     const dialContainer = this.shadowRoot.querySelector('.dial__value');
 
-    input.addEventListener('change', (e) => {
-      const value = e.target.value;
+    input.addEventListener('change', setDailValueHTML.bind(this));
+    function setDailValueHTML(e) {
+      const value = +e.target.value;
       // Report value in .dial__value
       const dialValue = this.shadowRoot.querySelector('.dial__value');
-      dialValue.innerText = value;
-    });
+      dialValue.innerHTML = `${getDialValueHTML(value + 1)}<br>${getDialValueHTML(value)}<br>${getDialValueHTML(value - 1)}`;
+    }
+
+    // Set default value  
+    setDailValueHTML.call(this, { target: { value: defaultDialValue } });
 
     if (dialContainer) {
       const startInteraction = (e) => {
@@ -25,7 +38,7 @@ createCustomElement('os-dial', function () {
           const rect = dialContainer.getBoundingClientRect();
           const clientY = event.clientY || event.touches[0].clientY;
           const offsetY = clientY - rect.top;
-          const newValue = Math.max(0, Math.min(100, 100 - (offsetY / rect.height) * 100));
+          const newValue = Math.max(0, Math.min(10, 10 - (offsetY / rect.height) * 10));
           input.value = newValue;
           input.dispatchEvent(new Event('change'));
         };

@@ -18,6 +18,7 @@
     justify-content: center;
     user-select: none;
     border-radius: 5px;
+    overflow: hidden;
 }
 
 .dial {
@@ -25,14 +26,28 @@
     display: inline-flex;
 }
 
+
 .dial__value{
+    line-height: 15px;
+}
+.dial__value, .dial__lens{
     width: 50px;
     cursor: grab;
     height: 30px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
+    z-index: 1;
+}
+.dial__lens{
     background: var(--theme-color); /* Use the theme color */
+    position: absolute;
+}
+
+.dial__value:active {
+    cursor: grabbing; /* Cursor when grabbing */
 }
 
 .dial-container:active {
