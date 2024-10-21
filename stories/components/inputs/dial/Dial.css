@@ -1,1 +1,45 @@
-h1 {color: blue;}
+
+/* Define variables? */
+:host {
+    --theme-color: #3498db; /* Define the theme color within the shadow DOM */
+}
+
+.dial input{
+    display: none;
+    /* Hiding the default range input  */
+}
+.dial-container{
+    position: relative;
+    min-height: 100px;
+    background: red;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    border-radius: 5px;
+}
+
+.dial {
+    position: absolute;
+    display: inline-flex;
+}
+
+.dial__value{
+    width: 50px;
+    cursor: grab;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--theme-color); /* Use the theme color */
+}
+
+.dial-container:active {
+    cursor: grabbing; /* Cursor when grabbing */
+}
+
+.dial__label{
+    align-self:flex-end;
+    text-align: center;
+}
