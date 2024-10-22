@@ -56,6 +56,7 @@ import{c as E}from"./custom-element-BSS606lH.js";const V=`<div class="dial-conta
 .dial__lens{
     background: var(--theme-color); /* Use the theme color */
     position: absolute;
+    transition: all 0.2s;
 }
 
 [data-has-user-voted="false"]{
@@ -78,6 +79,7 @@ import{c as E}from"./custom-element-BSS606lH.js";const V=`<div class="dial-conta
 }
 
 .shadow {
+    transition: all 1.5s;
     box-shadow: inset 0 0 16px #61440e;
     &[data-has-user-voted="false"]{
         box-shadow: inset 0 0 16px #3b18d8;

@@ -1,4 +1,4 @@
-import"./index-DcZGqPg1.js";import{c as y}from"./custom-element-BSS606lH.js";import{d as k}from"./DataMockWrapper-OGnPk58c.js";const w=`
+import"./index-DcZGqPg1.js";import{c as y}from"./custom-element-BSS606lH.js";import{d as k}from"./DataMockWrapper-CL0a81BX.js";const w=`
 <div class="vote-container">
     <div class="average-vote">ave</div>
     <os-dial></os-dial>
@@ -16,9 +16,14 @@ import"./index-DcZGqPg1.js";import{c as y}from"./custom-element-BSS606lH.js";imp
         font-size: 12px;
         color: #6c757d;
         border: 1px solid #6c757d;
-        padding: 7px 15px;
         margin-bottom: 5px;
         user-select: none;
+        width: 49px;
+        height: 30px;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     .total-count-icon{
         position: relative;
@@ -129,8 +134,8 @@ import"./index-DcZGqPg1.js";import{c as y}from"./custom-element-BSS606lH.js";imp
     </g>
   </g>
 </svg>
-`;y("os-forum-card-vote",function(){document.addEventListener("DOMContentLoaded",o=>{const t=this.hasAttribute("totalVoteCount")?+this.getAttribute("totalVoteCount"):0,s=this.hasAttribute("averageVote")?+this.getAttribute("averageVote"):"N/A",i=this.hasAttribute("userVote")?+this.getAttribute("userVote"):"",r=this.data||{},m=this.shadowRoot.querySelector(".total-count-icon .svg-container"),h=this.shadowRoot.querySelector(".total-count-icon .count");m.innerHTML=V,h.innerHTML=t;const a=this.shadowRoot.querySelector(".average-vote");a.innerHTML=s;const d=this.shadowRoot.querySelector("os-dial");d.setAttribute("defaultDialValue",i),d.data={onChange:(g,e)=>{},onUserVote:(g,e)=>{const c={target:e.querySelector(".dial__input")},v=(s*t+ +c.target.value)/(t+1);a.innerHTML=v.toFixed(1),e.querySelector("[data-has-user-voted]").setAttribute("data-has-user-voted",!0),this.shadowRoot.querySelector(".count").innerText=2,r.onUserVote&&r.onUserVote(c,this.shadowRoot,e)},hasUserVoted:r.hasUserVoted||!1}})},w,f);const S={title:"Components/Cards/Forum Card/Votes",tags:["autodocs"],render:o=>`<os-forum-card-vote ${o.totalVoteCount?`totalVoteCount=${o.totalVoteCount} `:""} ${o.averageVote?`averageVote=${o.averageVote} `:""} ${o.userVote?`userVote=${o.userVote} `:""} ></os-forum-card-vote>`,argTypes:{userVote:{control:"number",min:0,max:10}},parameters:{docs:{description:{component:`This button is a simple button that can be used to trigger actions.  
-Styles need an update.`}}}},n={args:{totalVoteCount:1,averageVote:10},decorators:[o=>k(o,{onChange:(t,s,i)=>{},onUserVote:t=>{console.log("User voted ",t.target.value)},hasUserVoted:!1})]};var p,l,u;n.parameters={...n.parameters,docs:{...(p=n.parameters)==null?void 0:p.docs,source:{originalSource:`{
+`;y("os-forum-card-vote",function(){document.addEventListener("DOMContentLoaded",t=>{const o=this.hasAttribute("totalVoteCount")?+this.getAttribute("totalVoteCount"):0,s=this.hasAttribute("averageVote")?+this.getAttribute("averageVote"):"N/A",i=this.hasAttribute("userVote")?+this.getAttribute("userVote"):"",r=this.data||{},h=this.shadowRoot.querySelector(".total-count-icon .svg-container"),m=this.shadowRoot.querySelector(".total-count-icon .count");h.innerHTML=V,m.innerHTML=o;const a=this.shadowRoot.querySelector(".average-vote");a.innerHTML=s;const d=this.shadowRoot.querySelector("os-dial");d.setAttribute("defaultDialValue",i),d.data={onChange:(g,e)=>{},onUserVote:(g,e)=>{const c={target:e.querySelector(".dial__input")},v=(s*o+ +c.target.value)/(o+1);a.innerHTML=v.toFixed(1),e.querySelector("[data-has-user-voted]").setAttribute("data-has-user-voted",!0),this.shadowRoot.querySelector(".count").innerText=2,r.onUserVote&&r.onUserVote(c,this.shadowRoot,e)},hasUserVoted:r.hasUserVoted||!1}})},w,f);const S={title:"Components/Cards/Forum Card/Votes",tags:["autodocs"],render:t=>`<os-forum-card-vote ${t.totalVoteCount?`totalVoteCount=${t.totalVoteCount} `:""} ${t.averageVote?`averageVote=${t.averageVote} `:""} ${t.userVote?`userVote=${t.userVote} `:""} ></os-forum-card-vote>`,argTypes:{userVote:{control:"number",min:0,max:10}},parameters:{docs:{description:{component:`This button is a simple button that can be used to trigger actions.  
+Styles need an update.`}}}},n={args:{totalVoteCount:1,averageVote:10},decorators:[t=>k(t,{onChange:(o,s,i)=>{},onUserVote:o=>{console.log("User voted ",o.target.value)},hasUserVoted:!1})]};var p,l,u;n.parameters={...n.parameters,docs:{...(p=n.parameters)==null?void 0:p.docs,source:{originalSource:`{
   args: {
     // primary: true,
     // label: "Button",
