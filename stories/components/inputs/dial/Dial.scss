@@ -19,6 +19,9 @@
     user-select: none;
     border-radius: 5px;
     overflow: hidden;
+    &[data-has-user-voted="false"]{
+        background: #f0eef3;
+    }
 }
 
 .dial {
@@ -29,6 +32,7 @@
 
 .dial__value{
     line-height: 15px;
+    cursor: grab;
 }
 .dial__value, .dial__lens{
     width: 50px;
@@ -48,6 +52,12 @@
     position: absolute;
 }
 
+[data-has-user-voted="false"]{
+    .dial__lens{
+        background: #3b18d8;
+    }
+}
+
 .dial__value:active {
     cursor: grabbing; /* Cursor when grabbing */
 }
@@ -63,6 +73,9 @@
 
 .shadow {
     box-shadow: inset 0 0 16px #61440e;
+    &[data-has-user-voted="false"]{
+        box-shadow: inset 0 0 16px #3b18d8;
+    }
 }
 
 .userVote{

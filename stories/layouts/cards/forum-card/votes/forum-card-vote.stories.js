@@ -1,6 +1,7 @@
 import { fn } from '@storybook/test';
 
-import './forum-card';
+import './forum-card-vote';
+import dataMockWrapper from '../../../../utils/DataMockWrapper';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 /**
@@ -8,12 +9,17 @@ import './forum-card';
  * Styles need an update.
  */
 export default {
-  title: 'Components/Cards/Forum Card',
+  title: 'Components/Cards/Forum Card/Votes',
   tags: ['autodocs'],
   render: (args) => {
-    return `<os-forum-card></os-forum-card>`
+    return `<os-forum-card ` +
+    `${args.totalVoteCount? `totalVoteCount=${args.totalVoteCount} ` : ""} ` +
+    `${args.averageVote? `averageVote=${args.averageVote} ` : ""} ` +
+    `${args.userVote? `userVote=${args.userVote} ` : ""} ` +
+    `></os-forum-card>`
   },
   argTypes: {
+    userVote: { control: 'number', min: 0, max: 10 },
     // backgroundColor: { control: 'color' },
     // label: { control: 'text' },
     // onclick: { action: 'onClick' },
@@ -33,5 +39,20 @@ export const Primary = {
   args: {
     // primary: true,
     // label: "Button",
+    totalVoteCount: 1,
+    averageVote: 10,
+    // userVote: 10
   },
+  decorators: [
+    Story => {
+      return dataMockWrapper(Story, {
+        onChange: (e, forumShadowRoot, dialShadowRoot) => {  
+            console.log("story", dialShadowRoot)
+            dialShadowRoot.querySelector('[data-has-user-voted]').setAttribute('data-has-user-voted', true);
+            forumShadowRoot.querySelector('.count').innerText = 2
+        },
+        hasUserVoted: false
+      });
+    }
+]
 };

@@ -12,7 +12,7 @@ import dataMockWrapper from '../../../utils/DataMockWrapper.js';
 
   ---
 
-  * This needs work to improve the resistance for the drag (and selecting the value <-- too sensitive). The basics are in place though
+  * This needs work to improve the resistance for the drag (and selecting the value <-- too sensitive). The basics are in place though. I know the styles are pretty bad, but the idea is that if you have not voted yet, the dial is blue and once you do vote it it lit up.
  */
 export default {
   title: 'Components/Inputs/Dial',
@@ -21,7 +21,6 @@ export default {
     return `<os-dial ` +
      (args.defaultDialValue ? `defaultDialValue="${args.defaultDialValue}" ` : "") +
      (args.range ? `range="${args.range}" ` : "") +
-     (args.onChange ? `onChange='${args.onChange}'` : "") +
     `></os-dial>`
   },
   argTypes: {
@@ -43,6 +42,7 @@ export default {
     args: {
       data: {
         onChange: "Callback function to report the value of the dial",
+        hasUserVoted: "Boolean to show if the user has voted"
       }
     },
   // args: { onclick: 'alert("hi")' },
@@ -61,9 +61,10 @@ export const Primary = {
   decorators: [
     Story => {
       return dataMockWrapper(Story, {
-        onChange: (e) => {
-          // console.log('onChange', e.target.value);
-        }
+        onChange: (e, shadowRoot) => {  
+          shadowRoot.querySelector('[data-has-user-voted]').setAttribute('data-has-user-voted', true);
+        },
+        hasUserVoted: false
       });
     }
   ]

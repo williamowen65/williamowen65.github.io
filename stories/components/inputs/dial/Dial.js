@@ -1,6 +1,6 @@
 import { createCustomElement } from "../../../utils/custom-element.js";
 import htmlContent from './Dial.html?raw';
-import cssContent from './Dial.css?raw';
+import cssContent from './Dial.scss?raw';
 
 
 // Fetch and create custom element
@@ -9,13 +9,19 @@ createCustomElement('os-dial', function () {
     // Get Props
     const defaultDialValue = this.getAttribute('defaultDialValue') || 5;
     const onChange = this.data?.onChange || null;
+    const hasUserVoted = this.data?.hasUserVoted || false;
     const range = this.hasAttribute('range') ? this.getAttribute('range').split(',')  : [0, 10];
 
+    
+    
     // Read input value from class dial__input
     const input = this.shadowRoot.querySelector('.dial__input');
     const dialValue = this.shadowRoot.querySelector('.dial__value');
     const dialLens = this.shadowRoot.querySelector('.dial__lens');
     const dialContainer = this.shadowRoot.querySelector('.dial-container');
+    
+    // Display if user has voted
+    dialContainer.setAttribute('data-has-user-voted', hasUserVoted);
     
     // apply range to range input
     input.setAttribute('min', range[0]);
@@ -30,20 +36,21 @@ createCustomElement('os-dial', function () {
     }
     
     input.addEventListener('change', setDailValueHTML.bind(this));
-    function setDailValueHTML(e) {
+    function setDailValueHTML(e, onload = false) {
       const value = +e.target.value;
       // Report value in .dial__value
       const dialValue = this.shadowRoot.querySelector('.dial__value');
       dialValue.innerHTML = `${getDialValueHTML(value + 1)}<br><div class="userVote">${getDialValueHTML(value)}</div><br>${getDialValueHTML(value - 1)}`;
       // Report value from component in callback
     
-      if(onChange) {
-        onChange(e)
+      if(onChange && onload == false) {
+        onChange(e, this.shadowRoot)
       }
     }
 
     // Set default value  
-    setDailValueHTML.call(this, { target: { value: defaultDialValue } });
+    const onload = true
+    setDailValueHTML.call(this, { target: { value: defaultDialValue } }, onload);
 
     if (dialValue) {
       const startInteraction = (e) => {
