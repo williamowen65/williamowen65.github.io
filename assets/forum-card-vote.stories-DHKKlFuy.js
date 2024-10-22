@@ -1,4 +1,4 @@
-import"./index-DcZGqPg1.js";import{c as v}from"./custom-element-BSS606lH.js";import{d as y}from"./DataMockWrapper-sh-Outgz.js";const k=`
+import"./index-DcZGqPg1.js";import{c as y}from"./custom-element-BSS606lH.js";import{d as w}from"./DataMockWrapper-CC6HhTVF.js";const k=`
 <div class="vote-container">
     <div class="average-vote">ave</div>
     <os-dial></os-dial>
@@ -6,7 +6,7 @@ import"./index-DcZGqPg1.js";import{c as v}from"./custom-element-BSS606lH.js";imp
         <div class="svg-container"></div>
         <div class="count">103k</div>
     </div>
-</div>`,w=`
+</div>`,f=`
 .vote-container{
     display: flex;
     flex-direction: column;
@@ -36,7 +36,7 @@ import"./index-DcZGqPg1.js";import{c as v}from"./custom-element-BSS606lH.js";imp
         }
     }
 }
-`,f=`<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+`,V=`<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
@@ -129,8 +129,8 @@ import"./index-DcZGqPg1.js";import{c as v}from"./custom-element-BSS606lH.js";imp
     </g>
   </g>
 </svg>
-`;v("os-forum-card-vote",function(){document.addEventListener("DOMContentLoaded",t=>{const o=this.hasAttribute("totalVoteCount")?+this.getAttribute("totalVoteCount"):0,e=this.hasAttribute("averageVote")?+this.getAttribute("averageVote"):"N/A",n=this.hasAttribute("userVote")?+this.getAttribute("userVote"):"",s=this.data||{};console.log("os-forum-card-vote",s,this,this.data);const u=this.shadowRoot.querySelector(".total-count-icon .svg-container"),h=this.shadowRoot.querySelector(".total-count-icon .count");u.innerHTML=f,h.innerHTML=o;const i=this.shadowRoot.querySelector(".average-vote");i.innerHTML=e;const a=this.shadowRoot.querySelector("os-dial");a.setAttribute("defaultDialValue",n),a.data={onChange:(d,m)=>{const g=(e*o+ +d.target.value)/(o+1);i.innerHTML=g.toFixed(1),s.onChange&&s.onChange(d,this.shadowRoot,m)},hasUserVoted:s.hasUserVoted||!1}})},k,w);const b={title:"Components/Cards/Forum Card/Votes",tags:["autodocs"],render:t=>`<os-forum-card-vote ${t.totalVoteCount?`totalVoteCount=${t.totalVoteCount} `:""} ${t.averageVote?`averageVote=${t.averageVote} `:""} ${t.userVote?`userVote=${t.userVote} `:""} ></os-forum-card-vote>`,argTypes:{userVote:{control:"number",min:0,max:10}},parameters:{docs:{description:{component:`This button is a simple button that can be used to trigger actions.  
-Styles need an update.`}}}},r={args:{totalVoteCount:1,averageVote:10},decorators:[t=>y(t,{onChange:(o,e,n)=>{console.log("story",n),n.querySelector("[data-has-user-voted]").setAttribute("data-has-user-voted",!0),e.querySelector(".count").innerText=2},hasUserVoted:!1})]};var c,p,l;r.parameters={...r.parameters,docs:{...(c=r.parameters)==null?void 0:c.docs,source:{originalSource:`{
+`;y("os-forum-card-vote",function(){document.addEventListener("DOMContentLoaded",o=>{const t=this.hasAttribute("totalVoteCount")?+this.getAttribute("totalVoteCount"):0,e=this.hasAttribute("averageVote")?+this.getAttribute("averageVote"):"N/A",n=this.hasAttribute("userVote")?+this.getAttribute("userVote"):"",r=this.data||{},h=this.shadowRoot.querySelector(".total-count-icon .svg-container"),m=this.shadowRoot.querySelector(".total-count-icon .count");h.innerHTML=V,m.innerHTML=t;const i=this.shadowRoot.querySelector(".average-vote");i.innerHTML=e;const d=this.shadowRoot.querySelector("os-dial");d.setAttribute("defaultDialValue",n),d.data={onChange:(g,a)=>{},onUserVote:(g,a)=>{const c={target:a.querySelector(".dial__input")},v=(e*t+ +c.target.value)/(t+1);i.innerHTML=v.toFixed(1),r.onUserVote&&r.onUserVote(c,this.shadowRoot,a)},hasUserVoted:r.hasUserVoted||!1}})},k,f);const S={title:"Components/Cards/Forum Card/Votes",tags:["autodocs"],render:o=>`<os-forum-card-vote ${o.totalVoteCount?`totalVoteCount=${o.totalVoteCount} `:""} ${o.averageVote?`averageVote=${o.averageVote} `:""} ${o.userVote?`userVote=${o.userVote} `:""} ></os-forum-card-vote>`,argTypes:{userVote:{control:"number",min:0,max:10}},parameters:{docs:{description:{component:`This button is a simple button that can be used to trigger actions.  
+Styles need an update.`}}}},s={args:{totalVoteCount:1,averageVote:10},decorators:[o=>w(o,{onChange:(t,e,n)=>{console.log("story",n)},onUserVote:(t,e,n)=>{n.querySelector("[data-has-user-voted]").setAttribute("data-has-user-voted",!0),e.querySelector(".count").innerText=2},hasUserVoted:!1})]};var p,l,u;s.parameters={...s.parameters,docs:{...(p=s.parameters)==null?void 0:p.docs,source:{originalSource:`{
   args: {
     // primary: true,
     // label: "Button",
@@ -142,10 +142,12 @@ Styles need an update.`}}}},r={args:{totalVoteCount:1,averageVote:10},decorators
     return dataMockWrapper(Story, {
       onChange: (e, forumShadowRoot, dialShadowRoot) => {
         console.log("story", dialShadowRoot);
+      },
+      onUserVote: (e, forumShadowRoot, dialShadowRoot) => {
         dialShadowRoot.querySelector('[data-has-user-voted]').setAttribute('data-has-user-voted', true);
         forumShadowRoot.querySelector('.count').innerText = 2;
       },
       hasUserVoted: false
     });
   }]
-}`,...(l=(p=r.parameters)==null?void 0:p.docs)==null?void 0:l.source}}};const S=["Primary"];export{r as Primary,S as __namedExportsOrder,b as default};
+}`,...(u=(l=s.parameters)==null?void 0:l.docs)==null?void 0:u.source}}};const R=["Primary"];export{s as Primary,R as __namedExportsOrder,S as default};
