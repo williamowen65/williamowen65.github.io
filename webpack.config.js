@@ -6,7 +6,9 @@ module.exports = {
         rules: [
             { test: /\.txt$/, use: 'raw-loader' },
             { test: /\.css$/, use: ['raw-loader']},
-            { test: /\.html$/, use: 'html-loader' }
+            { test: /\.scss$/, use: ['raw-loader', 'sass-loader']},
+            { test: /\.html$/, use: 'html-loader' },
+            { test: /\.svg$/, use: 'svg-inline-loader' },
         ],
       },
       output: {
