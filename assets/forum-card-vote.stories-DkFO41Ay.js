@@ -1,4 +1,4 @@
-import"./index-DcZGqPg1.js";import{c as y}from"./custom-element-BSS606lH.js";import{d as w}from"./DataMockWrapper-CC6HhTVF.js";const k=`
+import"./index-DcZGqPg1.js";import{c as y}from"./custom-element-BSS606lH.js";import{d as k}from"./DataMockWrapper-OGnPk58c.js";const w=`
 <div class="vote-container">
     <div class="average-vote">ave</div>
     <os-dial></os-dial>
@@ -129,8 +129,8 @@ import"./index-DcZGqPg1.js";import{c as y}from"./custom-element-BSS606lH.js";imp
     </g>
   </g>
 </svg>
-`;y("os-forum-card-vote",function(){document.addEventListener("DOMContentLoaded",o=>{const t=this.hasAttribute("totalVoteCount")?+this.getAttribute("totalVoteCount"):0,e=this.hasAttribute("averageVote")?+this.getAttribute("averageVote"):"N/A",n=this.hasAttribute("userVote")?+this.getAttribute("userVote"):"",r=this.data||{},h=this.shadowRoot.querySelector(".total-count-icon .svg-container"),m=this.shadowRoot.querySelector(".total-count-icon .count");h.innerHTML=V,m.innerHTML=t;const i=this.shadowRoot.querySelector(".average-vote");i.innerHTML=e;const d=this.shadowRoot.querySelector("os-dial");d.setAttribute("defaultDialValue",n),d.data={onChange:(g,a)=>{},onUserVote:(g,a)=>{const c={target:a.querySelector(".dial__input")},v=(e*t+ +c.target.value)/(t+1);i.innerHTML=v.toFixed(1),r.onUserVote&&r.onUserVote(c,this.shadowRoot,a)},hasUserVoted:r.hasUserVoted||!1}})},k,f);const S={title:"Components/Cards/Forum Card/Votes",tags:["autodocs"],render:o=>`<os-forum-card-vote ${o.totalVoteCount?`totalVoteCount=${o.totalVoteCount} `:""} ${o.averageVote?`averageVote=${o.averageVote} `:""} ${o.userVote?`userVote=${o.userVote} `:""} ></os-forum-card-vote>`,argTypes:{userVote:{control:"number",min:0,max:10}},parameters:{docs:{description:{component:`This button is a simple button that can be used to trigger actions.  
-Styles need an update.`}}}},s={args:{totalVoteCount:1,averageVote:10},decorators:[o=>w(o,{onChange:(t,e,n)=>{console.log("story",n)},onUserVote:(t,e,n)=>{n.querySelector("[data-has-user-voted]").setAttribute("data-has-user-voted",!0),e.querySelector(".count").innerText=2},hasUserVoted:!1})]};var p,l,u;s.parameters={...s.parameters,docs:{...(p=s.parameters)==null?void 0:p.docs,source:{originalSource:`{
+`;y("os-forum-card-vote",function(){document.addEventListener("DOMContentLoaded",o=>{const t=this.hasAttribute("totalVoteCount")?+this.getAttribute("totalVoteCount"):0,s=this.hasAttribute("averageVote")?+this.getAttribute("averageVote"):"N/A",i=this.hasAttribute("userVote")?+this.getAttribute("userVote"):"",r=this.data||{},m=this.shadowRoot.querySelector(".total-count-icon .svg-container"),h=this.shadowRoot.querySelector(".total-count-icon .count");m.innerHTML=V,h.innerHTML=t;const a=this.shadowRoot.querySelector(".average-vote");a.innerHTML=s;const d=this.shadowRoot.querySelector("os-dial");d.setAttribute("defaultDialValue",i),d.data={onChange:(g,e)=>{},onUserVote:(g,e)=>{const c={target:e.querySelector(".dial__input")},v=(s*t+ +c.target.value)/(t+1);a.innerHTML=v.toFixed(1),e.querySelector("[data-has-user-voted]").setAttribute("data-has-user-voted",!0),this.shadowRoot.querySelector(".count").innerText=2,r.onUserVote&&r.onUserVote(c,this.shadowRoot,e)},hasUserVoted:r.hasUserVoted||!1}})},w,f);const S={title:"Components/Cards/Forum Card/Votes",tags:["autodocs"],render:o=>`<os-forum-card-vote ${o.totalVoteCount?`totalVoteCount=${o.totalVoteCount} `:""} ${o.averageVote?`averageVote=${o.averageVote} `:""} ${o.userVote?`userVote=${o.userVote} `:""} ></os-forum-card-vote>`,argTypes:{userVote:{control:"number",min:0,max:10}},parameters:{docs:{description:{component:`This button is a simple button that can be used to trigger actions.  
+Styles need an update.`}}}},n={args:{totalVoteCount:1,averageVote:10},decorators:[o=>k(o,{onChange:(t,s,i)=>{},onUserVote:t=>{console.log("User voted ",t.target.value)},hasUserVoted:!1})]};var p,l,u;n.parameters={...n.parameters,docs:{...(p=n.parameters)==null?void 0:p.docs,source:{originalSource:`{
   args: {
     // primary: true,
     // label: "Button",
@@ -141,13 +141,12 @@ Styles need an update.`}}}},s={args:{totalVoteCount:1,averageVote:10},decorators
   decorators: [Story => {
     return dataMockWrapper(Story, {
       onChange: (e, forumShadowRoot, dialShadowRoot) => {
-        console.log("story", dialShadowRoot);
+        // console.log("story", dialShadowRoot)
       },
-      onUserVote: (e, forumShadowRoot, dialShadowRoot) => {
-        dialShadowRoot.querySelector('[data-has-user-voted]').setAttribute('data-has-user-voted', true);
-        forumShadowRoot.querySelector('.count').innerText = 2;
+      onUserVote: e => {
+        console.log("User voted ", e.target.value);
       },
       hasUserVoted: false
     });
   }]
-}`,...(u=(l=s.parameters)==null?void 0:l.docs)==null?void 0:u.source}}};const R=["Primary"];export{s as Primary,R as __namedExportsOrder,S as default};
+}`,...(u=(l=n.parameters)==null?void 0:l.docs)==null?void 0:u.source}}};const U=["Primary"];export{n as Primary,U as __namedExportsOrder,S as default};
