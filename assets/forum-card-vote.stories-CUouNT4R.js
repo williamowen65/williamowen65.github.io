@@ -6,7 +6,7 @@ import"./index-DcZGqPg1.js";import{c as v}from"./custom-element-BSS606lH.js";imp
         <div class="svg-container"></div>
         <div class="count">103k</div>
     </div>
-</div>`,f=`
+</div>`,w=`
 .vote-container{
     display: flex;
     flex-direction: column;
@@ -36,7 +36,7 @@ import"./index-DcZGqPg1.js";import{c as v}from"./custom-element-BSS606lH.js";imp
         }
     }
 }
-`,w=`<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+`,f=`<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
@@ -129,8 +129,8 @@ import"./index-DcZGqPg1.js";import{c as v}from"./custom-element-BSS606lH.js";imp
     </g>
   </g>
 </svg>
-`;v("os-forum-card",function(){document.addEventListener("DOMContentLoaded",t=>{const e=this.hasAttribute("totalVoteCount")?+this.getAttribute("totalVoteCount"):0,n=this.hasAttribute("averageVote")?+this.getAttribute("averageVote"):"N/A",s=this.hasAttribute("userVote")?+this.getAttribute("userVote"):"",o=this.data||{};console.log("os-forum-card",o,this,this.data);const h=this.shadowRoot.querySelector(".total-count-icon .svg-container"),m=this.shadowRoot.querySelector(".total-count-icon .count");h.innerHTML=w,m.innerHTML=e;const i=this.shadowRoot.querySelector(".average-vote");i.innerHTML=n;const d=this.shadowRoot.querySelector("os-dial");d.setAttribute("defaultDialValue",s),d.data={onChange:(a,c)=>{console.log("User vote changed",a.target.value,c,o);const g=(n*e+ +a.target.value)/(e+1);i.innerHTML=g.toFixed(1),o.onChange&&o.onChange(a,this.shadowRoot,c)},hasUserVoted:o.hasUserVoted||!1}})},k,f);const b={title:"Components/Cards/Forum Card/Votes",tags:["autodocs"],render:t=>`<os-forum-card ${t.totalVoteCount?`totalVoteCount=${t.totalVoteCount} `:""} ${t.averageVote?`averageVote=${t.averageVote} `:""} ${t.userVote?`userVote=${t.userVote} `:""} ></os-forum-card>`,argTypes:{userVote:{control:"number",min:0,max:10}},parameters:{docs:{description:{component:`This button is a simple button that can be used to trigger actions.  
-Styles need an update.`}}}},r={args:{totalVoteCount:1,averageVote:10},decorators:[t=>y(t,{onChange:(e,n,s)=>{console.log("story",s),s.querySelector("[data-has-user-voted]").setAttribute("data-has-user-voted",!0),n.querySelector(".count").innerText=2},hasUserVoted:!1})]};var p,l,u;r.parameters={...r.parameters,docs:{...(p=r.parameters)==null?void 0:p.docs,source:{originalSource:`{
+`;v("os-forum-card-vote",function(){document.addEventListener("DOMContentLoaded",t=>{const o=this.hasAttribute("totalVoteCount")?+this.getAttribute("totalVoteCount"):0,e=this.hasAttribute("averageVote")?+this.getAttribute("averageVote"):"N/A",n=this.hasAttribute("userVote")?+this.getAttribute("userVote"):"",s=this.data||{};console.log("os-forum-card-vote",s,this,this.data);const u=this.shadowRoot.querySelector(".total-count-icon .svg-container"),h=this.shadowRoot.querySelector(".total-count-icon .count");u.innerHTML=f,h.innerHTML=o;const i=this.shadowRoot.querySelector(".average-vote");i.innerHTML=e;const a=this.shadowRoot.querySelector("os-dial");a.setAttribute("defaultDialValue",n),a.data={onChange:(d,m)=>{const g=(e*o+ +d.target.value)/(o+1);i.innerHTML=g.toFixed(1),s.onChange&&s.onChange(d,this.shadowRoot,m)},hasUserVoted:s.hasUserVoted||!1}})},k,w);const b={title:"Components/Cards/Forum Card/Votes",tags:["autodocs"],render:t=>`<os-forum-card ${t.totalVoteCount?`totalVoteCount=${t.totalVoteCount} `:""} ${t.averageVote?`averageVote=${t.averageVote} `:""} ${t.userVote?`userVote=${t.userVote} `:""} ></os-forum-card>`,argTypes:{userVote:{control:"number",min:0,max:10}},parameters:{docs:{description:{component:`This button is a simple button that can be used to trigger actions.  
+Styles need an update.`}}}},r={args:{totalVoteCount:1,averageVote:10},decorators:[t=>y(t,{onChange:(o,e,n)=>{console.log("story",n),n.querySelector("[data-has-user-voted]").setAttribute("data-has-user-voted",!0),e.querySelector(".count").innerText=2},hasUserVoted:!1})]};var c,p,l;r.parameters={...r.parameters,docs:{...(c=r.parameters)==null?void 0:c.docs,source:{originalSource:`{
   args: {
     // primary: true,
     // label: "Button",
@@ -148,4 +148,4 @@ Styles need an update.`}}}},r={args:{totalVoteCount:1,averageVote:10},decorators
       hasUserVoted: false
     });
   }]
-}`,...(u=(l=r.parameters)==null?void 0:l.docs)==null?void 0:u.source}}};const S=["Primary"];export{r as Primary,S as __namedExportsOrder,b as default};
+}`,...(l=(p=r.parameters)==null?void 0:p.docs)==null?void 0:l.source}}};const S=["Primary"];export{r as Primary,S as __namedExportsOrder,b as default};
