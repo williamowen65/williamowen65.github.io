@@ -12,11 +12,11 @@ export default {
   title: 'Components/Cards/Forum Card/Votes',
   tags: ['autodocs'],
   render: (args) => {
-    return `<os-forum-card ` +
+    return `<os-forum-card-vote ` +
     `${args.totalVoteCount? `totalVoteCount=${args.totalVoteCount} ` : ""} ` +
     `${args.averageVote? `averageVote=${args.averageVote} ` : ""} ` +
     `${args.userVote? `userVote=${args.userVote} ` : ""} ` +
-    `></os-forum-card>`
+    `></os-forum-card-vote>`
   },
   argTypes: {
     userVote: { control: 'number', min: 0, max: 10 },
