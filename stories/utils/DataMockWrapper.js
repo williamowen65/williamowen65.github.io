@@ -5,6 +5,5 @@ export default function dataMockWrapper(story, data){
     document.addEventListener('DOMContentLoaded', () => {  
         el.querySelector('*').data = data
      })
-     console.log("el", el)
     return el
 } 

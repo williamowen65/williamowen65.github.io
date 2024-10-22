@@ -17,7 +17,7 @@ import totalCountIcon from './local-assets/total-count-icon.svg?raw';
             const userVote = this.hasAttribute('userVote') ? +this.getAttribute('userVote') : '';
 
             const forumCardData = this.data || {};
-            console.log('os-forum-card-vote', forumCardData, this, this.data);
+            // console.log('os-forum-card-vote', forumCardData, this, this.data);
 
             // Handle total vote count
             const countIcon = this.shadowRoot.querySelector('.total-count-icon .svg-container'); 
@@ -37,12 +37,23 @@ import totalCountIcon from './local-assets/total-count-icon.svg?raw';
             userVoteDisplay.data = {
                 onChange: (e, dialShadowRoot) => {
                     // you have the current average, how many votes have been cast, and the a new vote gets cast
+                    // const newAverage = (averageVote * totalVoteCount + +e.target.value) / (totalVoteCount + 1);
+                    // averageDisplay.innerHTML = newAverage.toFixed(1);
+                    // if(forumCardData.onChange){
+                    //     forumCardData.onChange(e, this.shadowRoot, dialShadowRoot);
+                    // }
+                },
+                onUserVote: (_, dialShadowRoot) => { 
+                    const e = {
+                      target: dialShadowRoot.querySelector('.dial__input')
+                    }
+                    // you have the current average, how many votes have been cast, and the a new vote gets cast
                     const newAverage = (averageVote * totalVoteCount + +e.target.value) / (totalVoteCount + 1);
                     averageDisplay.innerHTML = newAverage.toFixed(1);
-                    if(forumCardData.onChange){
-                        forumCardData.onChange(e, this.shadowRoot, dialShadowRoot);
+                    if(forumCardData.onUserVote){
+                        forumCardData.onUserVote(e, this.shadowRoot, dialShadowRoot);
                     }
-                },
+                 },
                 hasUserVoted: forumCardData.hasUserVoted || false
             }
     });

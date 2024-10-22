@@ -9,6 +9,7 @@ createCustomElement('os-dial', function () {
     // Get Props
     const defaultDialValue = this.getAttribute('defaultDialValue') || 5;
     const onChange = this.data?.onChange || null;
+    const onUserVote = this.data?.onUserVote || null;
     const hasUserVoted = this.data?.hasUserVoted || false;
     const range = this.hasAttribute('range') ? this.getAttribute('range').split(',')  : [0, 10];
 
@@ -76,6 +77,15 @@ createCustomElement('os-dial', function () {
           document.removeEventListener('touchmove', moveInteraction);
           document.removeEventListener('touchend', endInteraction);
           dragDialLens(0)
+
+          // TODO: Create a pseudo change event: This is when the vote actually gets cast, 
+          // not while use is dragging the dial. 
+          // We still need a "change" event to report the value,
+          //  but not to cast the vote early in "moveInteraction".
+          // input.dispatchEvent(new Event('change'));
+          if(onUserVote) {
+            onUserVote(e, this.shadowRoot)
+          }
         };
 
         document.addEventListener('mousemove', moveInteraction);

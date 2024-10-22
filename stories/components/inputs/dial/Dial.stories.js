@@ -42,6 +42,7 @@ export default {
     args: {
       data: {
         onChange: "Callback function to report the value of the dial",
+        onUserVote: "Callback function to report the user voting action",
         hasUserVoted: "Boolean to show if the user has voted"
       }
     },
@@ -62,6 +63,9 @@ export const Primary = {
     Story => {
       return dataMockWrapper(Story, {
         onChange: (e, shadowRoot) => {  
+          // shadowRoot.querySelector('[data-has-user-voted]').setAttribute('data-has-user-voted', true);
+        },
+        onUserVote: (e, shadowRoot) => {  
           shadowRoot.querySelector('[data-has-user-voted]').setAttribute('data-has-user-voted', true);
         },
         hasUserVoted: false
