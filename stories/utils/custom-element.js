@@ -10,7 +10,7 @@ export async function createCustomElement(name, onload, html, css) {
     ${html}
     `
 
-    class button extends HTMLElement {
+    class customElementType extends HTMLElement {
         constructor() {
             super()
             this.attachShadow({ mode: 'open' })
@@ -25,6 +25,6 @@ export async function createCustomElement(name, onload, html, css) {
         }
     }
 
-    customElements.define(name, button)
+    customElements.define(name, customElementType)
 
 }
