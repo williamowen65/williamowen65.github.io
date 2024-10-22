@@ -9,7 +9,7 @@ import totalCountIcon from './local-assets/total-count-icon.svg?raw';
 
 // Fetch and create custom element
 
-  createCustomElement('os-forum-card',function() {
+  createCustomElement('os-forum-card-vote',function() {
     document.addEventListener('DOMContentLoaded', (event) => {
           // Get Props
             const totalVoteCount = this.hasAttribute('totalVoteCount') ? +this.getAttribute('totalVoteCount') : 0;
@@ -17,7 +17,7 @@ import totalCountIcon from './local-assets/total-count-icon.svg?raw';
             const userVote = this.hasAttribute('userVote') ? +this.getAttribute('userVote') : '';
 
             const forumCardData = this.data || {};
-            console.log('os-forum-card', forumCardData, this, this.data);
+            console.log('os-forum-card-vote', forumCardData, this, this.data);
 
             // Handle total vote count
             const countIcon = this.shadowRoot.querySelector('.total-count-icon .svg-container'); 
@@ -36,7 +36,6 @@ import totalCountIcon from './local-assets/total-count-icon.svg?raw';
             // Handle user vote change
             userVoteDisplay.data = {
                 onChange: (e, dialShadowRoot) => {
-                    console.log('User vote changed', e.target.value, dialShadowRoot, forumCardData)
                     // you have the current average, how many votes have been cast, and the a new vote gets cast
                     const newAverage = (averageVote * totalVoteCount + +e.target.value) / (totalVoteCount + 1);
                     averageDisplay.innerHTML = newAverage.toFixed(1);

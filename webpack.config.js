@@ -8,7 +8,7 @@ module.exports = {
             { test: /\.css$/, use: ['raw-loader']},
             { test: /\.scss$/, use: ['raw-loader', 'sass-loader']},
             { test: /\.html$/, use: 'html-loader' },
-            { test: /\.svg$/, use: 'svg-inline-loader' },
+            { test: /\.svg$/, use: 'raw-loader' },
         ],
       },
       output: {
