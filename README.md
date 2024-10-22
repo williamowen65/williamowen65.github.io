@@ -19,7 +19,7 @@ I'm continuing to investigate possibilities for the workflow, such as how compon
 - One thing that is interesting about the setup is the the HTML and CSS files are evaluated by template string when making the custom components. I am hoping to be able to take advantage of that.
 - The only thing that I really do not like is how you currently have to pass complex data to the components via javascript. To improve this workflow, I may have to introduce JSX or another templating engine to this project. But one of my goals is for the npm deployment to have no dependencies. 
 
-You can learn more about the components and the npm deployment at https://williamowen65.github.io/  
+> You can learn more about the components and the npm deployment at https://williamowen65.github.io/  
 --- 
 
 ## Goals
