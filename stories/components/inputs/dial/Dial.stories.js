@@ -66,7 +66,7 @@ export const Primary = {
           // shadowRoot.querySelector('[data-has-user-voted]').setAttribute('data-has-user-voted', true);
         },
         onUserVote: (e, shadowRoot) => {  
-          shadowRoot.querySelector('[data-has-user-voted]').setAttribute('data-has-user-voted', true);
+          // shadowRoot.querySelector('[data-has-user-voted]').setAttribute('data-has-user-voted', true);
         },
         hasUserVoted: false
       });

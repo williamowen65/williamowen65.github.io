@@ -83,8 +83,9 @@ createCustomElement('os-dial', function () {
           // We still need a "change" event to report the value,
           //  but not to cast the vote early in "moveInteraction".
           // input.dispatchEvent(new Event('change'));
+          this.shadowRoot.querySelector('[data-has-user-voted]').setAttribute('data-has-user-voted', true);
           if(onUserVote) {
-            onUserVote(e, this.shadowRoot)
+            onUserVote(e, this.shadowRoot);
           }
         };
 

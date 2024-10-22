@@ -50,6 +50,8 @@ import totalCountIcon from './local-assets/total-count-icon.svg?raw';
                     // you have the current average, how many votes have been cast, and the a new vote gets cast
                     const newAverage = (averageVote * totalVoteCount + +e.target.value) / (totalVoteCount + 1);
                     averageDisplay.innerHTML = newAverage.toFixed(1);
+                    dialShadowRoot.querySelector('[data-has-user-voted]').setAttribute('data-has-user-voted', true);
+                    this.shadowRoot.querySelector('.count').innerText = 2
                     if(forumCardData.onUserVote){
                         forumCardData.onUserVote(e, this.shadowRoot, dialShadowRoot);
                     }

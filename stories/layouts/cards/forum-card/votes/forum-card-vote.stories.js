@@ -47,11 +47,10 @@ export const Primary = {
     Story => {
       return dataMockWrapper(Story, {
         onChange: (e, forumShadowRoot, dialShadowRoot) => {  
-            console.log("story", dialShadowRoot)
+            // console.log("story", dialShadowRoot)
           },
-        onUserVote: (e,  forumShadowRoot, dialShadowRoot) => {  
-          dialShadowRoot.querySelector('[data-has-user-voted]').setAttribute('data-has-user-voted', true);
-          forumShadowRoot.querySelector('.count').innerText = 2
+        onUserVote: (e,) => {  
+          console.log("User voted ", e.target.value);
         },
         hasUserVoted: false
       });
