@@ -1,6 +1,6 @@
 import { createCustomElement } from "../../../utils/custom-element.js";
 import htmlContent from './Button.html?raw';
-import cssContent from './Button.css?raw';
+import cssContent from './Button.scss?raw';
 
 // Fetch and create custom element
 
