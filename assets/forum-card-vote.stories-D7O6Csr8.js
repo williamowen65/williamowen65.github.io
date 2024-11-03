@@ -1,6 +1,6 @@
 import"./index-DcZGqPg1.js";import{c as y}from"./custom-element-BSS606lH.js";import{d as k}from"./DataMockWrapper-CL0a81BX.js";const w=`
 <div class="vote-container">
-    <div class="average-vote">ave</div>
+    <div class="average-vote" title="Average">ave</div>
     <os-dial></os-dial>
     <div class="total-count-icon">
         <div class="svg-container"></div>
